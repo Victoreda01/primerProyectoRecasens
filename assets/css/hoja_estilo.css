@@ -1,0 +1,79 @@
+@font-face {
+font-family: "Bellfort";
+  src: url(../fonts/Bellfort.ttf);
+}
+
+:root {
+  --color1: #00ABFF;
+  --color2: rgb(100, 100, 100);
+  --color3: rgb(255, 255, 255);
+  --color4: rgb(0, 0, 0);
+  --color5: #efefef;
+
+}
+
+.bg-color1{
+  background-color: var(--color1);
+}
+
+.bg-color2{
+  background-color: var(--color2);
+}
+
+.text-color1{
+  color: var(--color1);
+}
+
+.text-color2{
+  color: var(--color2);
+}
+
+/* Classes modificades sobre bootstrap */
+
+.navbar-dark .navbar-nav .nav-link{
+  color: black ;
+  background-color: white;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover{
+  color: white;
+  background-color: black;
+}
+
+.text-color3{
+  color: white;
+}
+h2{
+  font-family: "Bellfort";
+}
+#carro{
+  background-image: url("../images/cabecera.jpg");
+  width: 32px;
+  height: 32px;
+  border: 2px black solid;
+  
+}
+#banner{
+  background: url("../images/cabecera.jpg");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.capaoscura{
+  background: rgb(100, 100, 100, 0.8);
+  padding: 100px;
+  text-align: center;
+}
+
+@media (max-width: 768px){
+  #banner{
+    background: url("../images/cabecera.jpg");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  .capaoscura{
+    background: rgb(100, 100, 100, 0.8);
+    text-align: center;
+  }
+}
