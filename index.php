@@ -26,15 +26,9 @@
 		?>
 
 		<div class="container">
-			<div class="container centro">
-				
-			<div class="d-flex cuerpo justify-content-between" style="background-color: #F2F4F3;">
-			<div class="busq">
-					<form action="http://primerproyectorecasens.com/" method="POST">
-					<input type="text" placeholder="BUSCAR..." style="text-align: right;">
-					<button type="submit" id="buscar"></button>
-					</form>
-				</div>
+			<div class="container centro" style="background-color: #F2F4F3;">			
+			<div class="d-flex cuerpo justify-content-between">
+			
 				<div class="col-6 mt-5 mb-4 pt-2">
 				<h6 class="centro sub">SOBRE NOSOTROS</h6>
 					<div class="d-flex flex-row caja-index centro">
