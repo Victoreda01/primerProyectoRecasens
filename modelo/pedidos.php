@@ -53,6 +53,13 @@ class pedido{
         return $this;
     }
 
+    public function sumaCantidad($cantidad)
+    {
+        $this->cantidad += $cantidad;
+
+        return $this;
+    }
+
     
 }
 

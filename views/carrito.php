@@ -12,23 +12,8 @@
 <body>
   <?php session_start(); 
   require_once('../views/navbar.php');
-  require_once('../config/listaProds.php');
-  
-  var_dump($_SESSION['Sel']);
-
-  if (isset($_POST['Del'])) {
-    $pedidoSel = $_SESSION['Sel'][$_POST['pos']];
-    if ($pedidoSel->getCantidad() == 1) {
-      unset($_SESSION["Sel"][$_POST['pos']]);
-      $_SESSION['Sel'] = array_values($_SESSION['Sel']);
-    }else{
-      $pedidoSel->setCantidad($pedidoSel->getCantidad() - 1);
-    }
-  }else if (isset($_POST['Add'])) {
-    $pedidoSel = $_SESSION['Sel'];
-    $pedidoSel->setCantidad($pedidoSel->getCantidad() + 1);
-  }
-  
+  require_once('../modelo/productos.php');
+  require_once('../modelo/pedidos.php');
   ?>  
   <div class="d-flex justify-content-end align-items-right">
   <button class="mPedidos align-self-right">Mis Pedidos</button>
@@ -38,10 +23,6 @@
   <table>
   <tr>
     <th colspan="4">
-
-      <?php 
-        
-        $listaIds = $_SESSION['Sel'];?>
         
       <h6>Patatas</h6>
       <hr>
@@ -49,16 +30,23 @@
 </tr>
       
       <?php
-      $pos = 0; 
-      $productos = $_SESSION['Sel'];
       
+      foreach ($_SESSION['Sel'] as $pedido) {
+       var_dump($_SESSION['Sel'] );
+            
+             $existe = 1;
+        
+     }
+     
       
-      var_dump($productos);
-      foreach ($listaPatatas as $pedido) {
-          if (in_array($prods->getIdProd(),$listaIds)) {?>
+      foreach ($_SESSION['Sel'] as $pedido) {
+
+        //$prods = $pedido->getProducto();
+        
+          ?>
             <tr>
                   <td>
-                    <?=$prods->getNProducto();?>
+                    <?php /* $prods->getNProducto(); */?>
                   </td>
                   <td>
                     <button type="button" class="botonP">Modificar Pedido</button>
@@ -68,16 +56,16 @@
                     <form action="http://primerproyectorecasens/views/carrito.php" method="post">
                     <input type="hidden" name="pos" value=<?=$pos++?>>
                       <button type="submit" name="Del">-</button> 
-                      <?= $prods->getCantidad();?> 
+                      <?php $pedido->getCantidad(); ?> 
                     <button type="submit" name="Add">+</button>
                     </form>
                 </div>
                 </td>
                 <td>
-                  <?=$prods->getPProd();?>€
+                  <?php /* prods->getPProd(); */?>€
                 </td>
             </tr>
-         <?php }
+         <?php 
         }
       ?>
     </table>
@@ -88,40 +76,7 @@
       <table>
   <tr>
     <th colspan="4">
-
-      <?php 
         
-        $listaIds = $_SESSION['Sel'];?>
-        
-      <h6>Bocatas</h6>
-      <hr>
-</th>
-</tr>
-      <?php foreach ($listaBocatas as $prods) {
-          if (in_array($prods->getIdProd(),$listaIds)) {?>
-            <tr>
-                  <td>
-                    <?=$prods->getNProducto();?>
-                  </td>
-                  <td>
-                    <button type="button" class="botonP">Modificar Pedido</button>
-                  </td>
-                  <td>
-                  <div class="botonP">
-                    <form action="http://localhost/primerProyectoRecasens/views/carrito.php" method="post">
-                    <button type="submit" name="Del">-</button> 
-                      <?php /* $prods->getCantidad(); */?> 
-                    <button type="submit" name="Add">+</button>
-                    </form>
-                </div>
-                </td>
-                <td>
-                  <?=$prods->getPProd();?>€
-                </td>
-            </tr>
-         <?php }
-        }
-      ?>
     </table>
     </div>
     <div class="d-flex justify-content-center align-items-right">

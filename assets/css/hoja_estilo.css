@@ -20,6 +20,9 @@ src: url(../fonts/Lato-Italic.ttf);
   --color5: #efefef;
 
 }
+html{
+  overflow-x: hidden;
+}
 
 a{
   text-decoration: none;
@@ -150,16 +153,22 @@ h2{
   background-image: url("../iconos/s_white_full_32.png");
   cursor: pointer;
 }
+
+#busq{
+  height: 20%;
+}
 #buscar{
-  margin-top: 1%;
   width: 32px;
-  height: 32px;
+  height: var(--BuscHei);
   background-image: url(../iconos/buscar.png);
   background-size: 100%;
   background-repeat: no-repeat;
   background-color:#49111C;
+
 }
 
+.buscador{
+}
 
 @media (max-width: 768px){
   #banner{
