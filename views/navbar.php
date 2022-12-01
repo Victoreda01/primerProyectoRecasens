@@ -1,24 +1,44 @@
-<?php 
-    echo '
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-        </ul>
-      </div>
+<header>
+        <div class="container">
+            <div class="row align-items-center">
+            <div class="col-5"></div>
+                <div class="col-1" id="titulo">
+                    <h2> <!-- <a href="http://localhost/primerProyectoRecasens/index.php"> --> <a href="http://primerproyectorecasens.com/">BOCATAPAS </a></h2>
+                </div>
+                <div class="col-3"></div>
+                <div class="col-2">
+<!--                     <a href="http://localhost/primerProyectoRecasens/views/carrito.php"> -->
+                    <a href="http://primerproyectorecasens.com/views/carrito.php">
+                        <div id="carro">
+                            <?= count($_SESSION['Sel'])?>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class=" navbar-expand-lg barra">
+    <div class="container">
+    <div class="row barra ">
+        <div class="col-3 abarra">
+            NOVEDADES
+        </div>
+        <div class="col-2 abarra">
+           <?= "OFERTA"?>
+        </div>
+        <div class="col-2 abarra">
+        <!-- <a href="http://localhost/primerProyectoRecasens/views/carta.php"> -->
+        <a href="http://primerproyectorecasens.com/views/carta.php">
+            CARTA
+            </a>
+        </div>
+        
+        <div class="col-2 abarra">
+           <?= "OFERTA"?>
+        </div>
+        <div class="col-3 abarra">
+           <?= "OFERTA"?>
+        </div>
     </div>
-  </nav>';
-?>
+</div>
+  </nav>

@@ -99,6 +99,27 @@ abstract class Productos{
 
     public abstract function cppt($size);
 
+
+    /**
+     * Get the value of nProducto
+     */ 
+    public function getNProducto()
+    {
+        return $this->nProducto;
+    }
+
+    /**
+     * Set the value of nProducto
+     *
+     * @return  self
+     */ 
+    public function setNProducto($nProducto)
+    {
+        $this->nProducto = $nProducto;
+
+        return $this;
+    }
+
 }
 
 ?>

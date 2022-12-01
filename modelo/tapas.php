@@ -3,12 +3,10 @@
 class tapa extends Productos{
     
     public $ingredientes = [];
-    public $salsa;
 
-    public function __construct($idProd,$nProducto,$tProd,$pProd,$ingredientes, $salsa,$size){
+    public function __construct($idProd,$nProducto,$tProd,$pProd,$ingredientes,$size){
         Parent::__construct($idProd,$nProducto,$tProd,$pProd,$size);
         $this->$ingredientes = $ingredientes;
-        $this->$salsa = $salsa;
   
       }
   
@@ -33,26 +31,6 @@ class tapa extends Productos{
           return $this;
       }
 
-
-    /**
-     * Get the value of salsa
-     */ 
-    public function getSalsa()
-    {
-        return $this->salsa;
-    }
-
-    /**
-     * Set the value of salsa
-     *
-     * @return  self
-     */ 
-    public function setSalsa($salsa)
-    {
-        $this->salsa = $salsa;
-
-        return $this;
-    }
 
     public function cppt($size){
         $pProd = Parent::getPProd();
