@@ -9,93 +9,75 @@
     <title>CARTA</title>
 </head>
 <body>
-    <?php session_start();?>
-    <?php require_once('../views/navbar.php');
-    require_once('../config/listaProds.php');?>
-    <h3>Patatas</h3>
+    <?php 
+    require_once('../modelo/pedidos.php');
+    require_once('../modelo/productos.php');
+    require_once('../config/listaProds.php');
+    session_start();
     
-    <ul>    
+    
+    
+
+    if (!isset($_SESSION['Sel'])) {
+        $_SESSION['Sel'] = array(); 
+    
+          }
+          require_once('../views/navbar.php');
+    ?>
+    <div class="container">
+      <div class="container-sm bg-color1 centro">
+        
+
+    
+    <ul>
+    <div class="row pt-4 pb-5">    
     <?php
-    foreach($listaPatatas as $patatas){?>
-    <label name="patatas"><?= $patatas->getNProducto()?>
-    <?= $patatas->getPProd()?>€
-      <form action="" method="POST">
-      <input name="idpat" style="display: none;" value=<?= $patatas->getIdProd();?>></input>
-      <button type="submit" name="Submit">Añadir</button>
-      </form>
-    </label>
-  <?php }
-
-      
-    if (isset($_POST['Submit'])) {
-      var_dump($_SESSION['Sel']);
-       if (!in_array($_POST['idpat'], $_SESSION['Sel']) ) {
-      $idProducto = $_POST['idpat'];
-      array_push($_SESSION['Sel'],$idProducto);
-      }
-    }
-  ?>
-    </ul>
+    $titulo = '';
+    $pos = 0;
+    foreach($listaProds as $prods){?>
     
-
-    <h3>Nuestros Bocadillos</h3>
-    
-    <ul>    
-    <?php
-    foreach($listaBocatas as $bocata){?>
-    
-    <label name="bocatas"><?= $bocata->getNProducto()?>
-    <?= $bocata->getPProd()?>€    
-    <form action="carta.php" method="post">
-    <input name="idboc" style="display: none;" value=<?= $bocata->getIdProd();?>></input>
-    <button type="submit" name="SubmitBoc">Añadir</button>
-    </form>
-    </label>
-      
-  <?php }
-  if (isset($_POST['SubmitBoc'])) {
-    if (!in_array($_POST['idboc'], $_SESSION['Sel']) ) {
-      $idProducto = $_POST['idboc'];
-      array_push($_SESSION['Sel'],$idProducto);
-      }
-  }?>
-    </ul>
-
-    <h3>Bebidas</h3>
-
-    <ul>    
-    <?php
-    foreach($listaBebidas as $bebidas){?>
+    <?php if ($prods->getTProd() != $titulo) {
+       $titulo = $prods->getTProd();?>
+       <h3 style="margin-top:2%; margin-left:4%; color:#49111C"><?= $titulo;?></h3>
+   <?php } ?>
    
-    <label name="bebida"><?= $bebidas->getNProducto()?>
-    <?= $bebidas->getPProd()?>€
+   <div class="prodsCarta col-sm-12 col-lg-4 mt-2 mb-2">
+    <label class="imgCarta" style="background-image: url(../assets/images/<?= $prods->getIdProd()?>.png);">
+    <div>
+      <p style="font-size: 1rem; padding-top:5%;" >
+        <?= $prods->getNProducto()?>
+      <p>
+        <?= $prods->getDProd()?>
+        </p>
+    </p>
+  </div>
+</label>
     
-    <form action="carta.php" method="post">
-    <input name="idbeb" style="display: none;" value=<?= $bebidas->getIdProd();?>></input>
-    <button type="submit">Añadir</button>
+    
+    <form action="../modelo/añadirProducto.php" method="post">
+    <input type="hidden" name="idprod" value=<?= $prods->getIdProd();?>></input>
+    <input type="hidden" name="pos" value=<?= $pos;?>></input>
+    <div class="subPr pt-1">
+    <?= $prods->getNProducto()?> 
+    
+    <button class="botonCarta"type="submit" name="addCarta"></button>
+    <select id="size" class="mt-1">
+      <option>S</option>
+      <option>M</option>
+      <option>XL</option>
+    </select>
+    </div>
     </form>
     </label>
+    </div>
+    
       
-  <?php }?>
+  <?php $pos++; }?>
+  </div>
     </ul>
-
-    <h3>Tapas</h3>
-   
-
-    <ul>    
-    <?php
-    foreach($listaTapas as $tapas){?>
-    <label name="tapa"><?= $tapas->getNProducto()?>
-    <?= $tapas->getPProd()?>€
-    <form action="carta.php" method="post">
-    <input name="idtap" style="display: none;" value=<?= $patatas->getIdProd();?>></input>
-    <button type="submit">Añadir</button>
-    </form>
-    </label>
-      
-  <?php }?>
-    </ul>
-
+    </div>
+  </div>
+    <?php require_once 'footer.php'; ?>
 </body>
 </html>
 		

@@ -4,8 +4,8 @@ class bebida extends Productos{
     
     public $marca;
 
-    public function __construct($idProd,$nProducto,$tProd,$pProd, $marca, $size){
-        Parent::__construct($idProd,$nProducto,$tProd,$pProd,$size);
+    public function __construct($idProd,$nProducto,$tProd,$pProd, $marca, $size,$dProd){
+        Parent::__construct($idProd,$nProducto,$tProd,$pProd,$size,$dProd);
         $this->$marca = $marca;
   
       }
@@ -37,15 +37,11 @@ class bebida extends Productos{
 
         switch ($size) {
             case 'M':
-                $pProd += 0.15;
+                $pProd += 0.55;
                 Parent::setPProd($pProd);
                 break;
             case 'XL':
-                $pProd += 0.35;
-                Parent::setPProd($pProd);
-                break;
-            case 'P':
-                $pProd += 1.25;
+                $pProd += 0.75;
                 Parent::setPProd($pProd);
                 break;
             default:

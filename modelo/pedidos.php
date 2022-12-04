@@ -53,6 +53,17 @@ class pedido{
         return $this;
     }
 
+    public function sumaCantidad($cantidad)
+    {
+        $this->cantidad += $cantidad;
+
+        return $this;
+    }
+
+    public function calculaPrecio(){
+        $total = $this->cantidad * $this->producto->getPProd();
+        return $total;
+    }
     
 }
 

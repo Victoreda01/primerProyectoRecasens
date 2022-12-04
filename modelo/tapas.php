@@ -4,8 +4,8 @@ class tapa extends Productos{
     
     public $ingredientes = [];
 
-    public function __construct($idProd,$nProducto,$tProd,$pProd,$ingredientes,$size){
-        Parent::__construct($idProd,$nProducto,$tProd,$pProd,$size);
+    public function __construct($idProd,$nProducto,$tProd,$pProd,$ingredientes,$size,$dProd){
+        Parent::__construct($idProd,$nProducto,$tProd,$pProd,$size,$dProd);
         $this->$ingredientes = $ingredientes;
   
       }
@@ -42,10 +42,6 @@ class tapa extends Productos{
                 break;
             case 'XL':
                 $pProd += 0.35;
-                Parent::setPProd($pProd);
-                break;
-            case 'P':
-                $pProd += 1.25;
                 Parent::setPProd($pProd);
                 break;
             default:
