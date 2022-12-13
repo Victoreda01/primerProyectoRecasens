@@ -4,15 +4,17 @@ abstract class Productos{
     public $tProd;
     public $nProducto;
     public $pProd;
+    public $dProd;
     public $idProd;
     public $size;
     
-    public function __construct($idProd,$nProducto,$tProd, $pProd,$size){
+    public function __construct($idProd,$nProducto,$tProd, $pProd,$size,$dProd){
         $this->idProd = $idProd;
         $this->nProducto = $nProducto;
         $this->tProd = $tProd;
         $this->pProd = $pProd;
         $this->size = $size;
+        $this->dProd = $dProd;
 
     }
     
@@ -120,6 +122,26 @@ abstract class Productos{
         return $this;
     }
 
+
+    /**
+     * Get the value of dProd
+     */ 
+    public function getDProd()
+    {
+        return $this->dProd;
+    }
+
+    /**
+     * Set the value of dProd
+     *
+     * @return  self
+     */ 
+    public function setDProd($dProd)
+    {
+        $this->dProd = $dProd;
+
+        return $this;
+    }
 }
 
 ?>

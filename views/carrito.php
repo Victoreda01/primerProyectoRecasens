@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,81 +8,140 @@
 		<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
 		<link rel="stylesheet" href="../assets/css/hoja_estilo.css">
 		<script src="../assets/js/bootstrap.min.js"></script>
-    <title>CARTA</title>
+    <title>CARRITO</title>
 </head>
+<?php 
+require_once('../modelo/productos.php');
+require_once('../modelo/pedidos.php');
+require_once('../config/listaProds.php');
+session_start();
+if (isset($_SESSION['Sel'])) {
+  if (isset($_POST['idprod'])) {
+    $prodSel = new pedido($productos[$_POST['idprod']]);
+    array_push($_SESSION['Sel'], $prodSel);
+  }
+}else{
+  $_SESSION['Sel'] = array(); 
+}
+
+
+?>
 <body>
-  <?php session_start(); 
-  require_once('../views/navbar.php');
-  require_once('../modelo/productos.php');
-  require_once('../modelo/pedidos.php');
-  ?>  
-  <div class="d-flex justify-content-end align-items-right">
-  <button class="mPedidos align-self-right">Mis Pedidos</button>
+  <!-- Si no Hay nada en el carrito Se Muestra esto -->
+<?php 
+require_once('../views/navbar.php');
+$pos = 0;
+if (count($_SESSION['Sel'])== 0) {?>
+  <div class="container bg-color1">
+    <div class="container">
+    <div class="NoCompra d-lg-flex justify-content-center align-items-center">
+      <h2>No Se Ha Realizado Ninguna Compra..</h2>
+    </div>
+    </div>
   </div>
-  <div class="d-flex justify-content-center align-items-center">
-  
-  <table>
-  <tr>
-    <th colspan="4">
-        
-      <h6>Patatas</h6>
-      <hr>
-</th>
-</tr>
-      
-      <?php
-      
-      foreach ($_SESSION['Sel'] as $pedido) {
-       var_dump($_SESSION['Sel'] );
-            
-             $existe = 1;
-        
-     }
-     
-      
-      foreach ($_SESSION['Sel'] as $pedido) {
+  <!-- Si Hay cosas en el carrito Se Muestra esto -->
+  <?php }else{?>
+  <div class="container bg-color1">
+<div class="d-flex justify-content-end align-items-center ">
+  <button class="mPedidos align-self-right boton mt-4">Mis Pedidos</button>
+  </div>
+  <div class="container NoCompra">
 
-        //$prods = $pedido->getProducto();
+  <div class="container mb-5 mt-5 tCarrito">
+    <?php
+    /*Si la session no existe se Crea */
+    if (!isset($_SESSION['Sel'])) {
+      $_SESSION['Sel'] = array(); 
+  }
+    /* Mostramos todos los pedidos guardados en la session*/
+    
+    $ptot = 0;
+    
+    foreach ($_SESSION['Sel'] as $pedido) {
+        $prods = $pedido->getProducto();
         
+
+        if($pos == 0){
+        ?>
+        
+        <div class="row justify-content-center">
+          <div class="col-sm-3 col-12">
+            <?= $prods->getNProducto();?> 
+          </div>
+          <div class="col-lg-3 hd">
+            <?= "Ingredientes" ?>
+          </div>
+          <div class="col-lg-3 hd">
+          <?=  "Cantidad" ?>
+          </div>
+          <div class="col-lg-3 hd">
+          <?=  "Precio" ?> 
+          </div>
+          
+        </div>
+                    
+        <?php }else{
           ?>
-            <tr>
-                  <td>
-                    <?php /* $prods->getNProducto(); */?>
-                  </td>
-                  <td>
-                    <button type="button" class="botonP">Modificar Pedido</button>
-                  </td>
-                  <td>
-                  <div class="botonP">
-                    <form action="http://primerproyectorecasens/views/carrito.php" method="post">
-                    <input type="hidden" name="pos" value=<?=$pos++?>>
-                      <button type="submit" name="Del">-</button> 
-                      <?php $pedido->getCantidad(); ?> 
-                    <button type="submit" name="Add">+</button>
+          <div class="row">
+          <div class="col-lg-3 col-sm-12">
+            <?= $prods->getNProducto();?> 
+          </div>
+          </div>
+        <?php }?>
+        <div class="row justify-content-center">
+          <div class="col-lg-3 col-sm-12">
+          <img src="../assets/images/<?=$prods->getIdProd()?>.png" alt="<?=$prods->getNProducto()?>"  width="125px" height="125px">
+          </div>
+          <div class="col-lg-3 mt-5 col-sm-12">
+          <button type="button" class="boton">Modificar Pedido</button>
+          </div>
+          <div class="col-lg-3 mt-5 col-sm-12">
+          <form action="http://primerproyectorecasens.com/modelo/añadirProducto.php" method="post">
+                      <input type="hidden" name="idprod" value=<?=$prods->getIdProd()?>>
+                      <input type="hidden" name="pos" value=<?=$pos?>>
+                      <div class="botonP">
+                      <button type="submit" class="boton" name="Del">-</button> 
+                      <?= $pedido->getCantidad(); ?> 
+                    <button type="submit" class="boton" name="Add">+</button>
+                    </div>
                     </form>
-                </div>
-                </td>
-                <td>
-                  <?php /* prods->getPProd(); */?>€
-                </td>
-            </tr>
-         <?php 
-        }
-      ?>
-    </table>
-    </div>
-
-  <div class="d-flex justify-content-center align-items-center">
+                    
+          </div>
+          <div class="col-lg-3 mt-5 col-sm-12">
+          <?php ;  ?>
+            <?=  $pedido->calculaPrecio(); ?>€
+          </div>
+        </div>
+        <hr id="bar" style="border: 2px;">
+        <?php
+        $pos++;
+        $ptot += $pedido->calculaPrecio();
+      }
+?>
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+        </div>
+        <div class="col-lg-3 col-sm-6">
+        <h4>TOTAL:</h4>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+        <h5><?= $ptot?>€</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-8">
+        </div>
+        <div class="col-lg-2 col-sm-12">
+          <form action="http://primerproyectorecasens.com/modelo/realizarPedido.php" method="post">
+        <button class="boton mt-3 compra" type="Submit" name="comp"style="float: right;" >Comprar</button>
+          </form>
+        </div>
+      </div>
       
-      <table>
-  <tr>
-    <th colspan="4">
-        
-    </table>
+
     </div>
-    <div class="d-flex justify-content-center align-items-right">
-  <button class="mPedidos align-self-right">Comprar</button>
+    </div>    
   </div>
+  <?php } require_once 'footer.php'; ?>
 </body>
 </html>
-		

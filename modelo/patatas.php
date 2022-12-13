@@ -7,8 +7,8 @@ class patata extends productos{
     protected $salsa;
 
 
-    public function __construct($idProd,$nProducto,$tProd,$pProd,$tipo,$salsa,$size){
-      Parent::__construct($idProd,$nProducto,$tProd,$pProd,$size);
+    public function __construct($idProd,$nProducto,$tProd,$pProd,$tipo,$salsa,$size,$dProd){
+      Parent::__construct($idProd,$nProducto,$tProd,$pProd,$size,$dProd);
       $this->tipo = $tipo;
       $this->salsa = $salsa;
 
@@ -61,15 +61,15 @@ class patata extends productos{
         $pProd = Parent::getPProd();
 
         switch ($size) {
-            case 'S':
+            case "S":
                 $pProd += 0.15;
                 Parent::setPProd($pProd);
                 break;
-            case 'M':
+            case "M":
                 $pProd += 0.35;
                 Parent::setPProd($pProd);
                 break;
-            case 'L':
+            case "XL":
                 $pProd += 1.25;
                 Parent::setPProd($pProd);
                 break;

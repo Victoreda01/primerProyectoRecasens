@@ -60,6 +60,10 @@ class pedido{
         return $this;
     }
 
+    public function calculaPrecio(){
+        $total = $this->cantidad * $this->producto->getPProd();
+        return $total;
+    }
     
 }
 
