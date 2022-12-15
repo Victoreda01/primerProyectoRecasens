@@ -6,6 +6,7 @@ require_once('../config/listaProds.php');
 session_start();
 
 
+
     
     if (!isset($_SESSION['Sel'])) {
         $_SESSION['Sel'] = array(); 
