@@ -271,7 +271,7 @@ th{
   text-align: center;
 }
 .Pi{
-  font-size: 0.7rem;
+  font-size: 0.9rem;
 }
 #copy{
   font-size: 0.7rem;
@@ -402,16 +402,6 @@ th{
 .pp-pp{
   font-size: 2rem;
 }
-
-
-}
-
-
-
-/*MINIMOS MOBIL*/
-@media (min-width: 576px){
-
-  
   
   
   html{

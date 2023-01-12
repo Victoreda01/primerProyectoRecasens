@@ -14,10 +14,11 @@
                 <li>Conocenos</li>
             </ul>
         </div>
-        <div class="col-12 col-lg-2 mt-3" id="copy" style="padding-left:12%;">
+        <div class="col-12 col-lg-3 mt-3" id="copy" style="padding-left:12%;">
             © Copyright 2023
         </div>
-        <div class="col-12 col-lg-2 mt-3" id="reds" style=" text-align:center; float:right;">
+        <div class="col-lg-2"></div>
+        <div class="col-12 col-lg-3 mt-3" id="reds" style=" text-align:center; float:right;">
         <div class="flex-row d-flex justify-content-around">
             <a href="https://www.instagram.com" target="_blank"><div class="rs" id="i"></div></a>
             <a href="https://www.facebook.com" target="_blank"><div class="rs" id="f"></div></a>
