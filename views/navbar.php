@@ -1,29 +1,36 @@
-<header>
+ <header>
         <div class="container">
             <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-1"></div>
-                <div class="col-lg-6 col-8" id="titulo">
+                <div class="col-lg-5"></div>
+                <div class="col-lg-3 col-8" id="titulo">
                     <h2>  
-<!--                         <a href="http://localhost/primerProyectoRecasens/index.php">
- -->                         <a href="http://primerproyectorecasens.com/">
+                       <a href="http://primerproyectorecasens.com/">
                             BOCATAPAS 
                         </a>
                     </h2>
                 </div>
-                <div class="offset-lg-1 col-lg-1 col-2" >
-<!--                     <a href="http://localhost/primerProyectoRecasens/views/carrito.php">
- -->                     <a href="http://primerproyectorecasens.com/views/carrito.php">
+                <div class="offset-lg-1 col-lg-1 col-1" >
+                  <a href="http://primerproyectorecasens.com/views/carrito.php">
                         <div id="carro">
-                            <?= count($_SESSION['Sel'])?>
+                            <?= count($_SESSION['Sel']) ?>
                         </div>
                     </a>
                 </div>
+                <div class="col-lg-1 col-2" >
+                <nav class="navbar navbar-dark bg-dark d-sm-none">
+                  <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <i class="navbar-toggler-icon"></i>
+                    </button>
+                </div>
+                </nav>
+                </div>
+                
+
             </div>
         </div>
-        </div>
-    </header>
-    <nav class=" navbar-expand-lg barra">
+        <nav class="d-none d-sm-block barra">
     <div class="container barrasm">
     <div class="container">
     <div class="row barra">
@@ -31,22 +38,37 @@
             SUGERENCIAS
         </div>
         <div class="col-lg-2 col-2 abarra">
-           <?= "OFERTAS"?>
+           OFERTAS
         </div>
         <div class="col-lg-2 col-2 abarra">
-        <!-- <a href="http://localhost/primerProyectoRecasens/views/carta.php"> -->
         <a href="http://primerproyectorecasens.com/views/carta.php">
             CARTA
             </a>
         </div>
         
         <div class="col-lg-2 col-3 abarra">
-           <?= " NOVEDADES"?>
+           NOVEDADES
         </div>
         <div class="col-lg-3 col-2 abarra">
-           <?= "CONTACTO"?>
+           CONTACTO
         </div>
     </div>
     </div>
 </div>
   </nav>
+
+
+<div class="collapse" id="navbarToggleExternalContent">
+  <div class="bg-dark p-4">
+    <a href="#">SUGERENCIAS</a><hr>
+    <a href="#">NOVEDADES</a><hr>
+    <a href="#">CONTACTO</a><hr>
+    <a href="#">OFERTAS</a><hr>
+    <a href="http://primerproyectorecasens.com/views/carta.php">CARTA</a><hr>
+    
+  </div>
+</div>
+
+        </div>
+    </header>
+    

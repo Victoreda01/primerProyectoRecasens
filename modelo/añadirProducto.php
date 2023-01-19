@@ -41,11 +41,7 @@ session_start();
                     $pedido->sumaCantidad(-1);
                     $existe = true;
                 }
-            }else if(isset($_POST['comp'])){
-                
-                setcookie("mispedidos",$_SESSION['Sel'],"/");
-                session_destroy();
-                header("http://primerproyectorecasens.com");
+            
             }else{
             $pedido->sumaCantidad(1);
             $existe = true;

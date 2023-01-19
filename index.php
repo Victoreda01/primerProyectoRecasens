@@ -6,7 +6,8 @@
 		<title>BOCATAPAS</title>
 		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 		<link rel="stylesheet" href="assets/css/hoja_estilo.css">
-		<script src="assets/js/bootstrap.min.js"></script>
+		
+
 	</head>
 	<?php 
 		
@@ -100,6 +101,7 @@
 			</div>
 		</div>
 		<?php require_once 'views/footer.php'; ?>
+		<script src="assets/js/bootstrap.min.js"></script>
 	</body>
 </html>
 

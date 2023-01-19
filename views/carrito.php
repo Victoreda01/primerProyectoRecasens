@@ -65,16 +65,16 @@ if (count($_SESSION['Sel'])== 0) {?>
         
         <div class="row justify-content-center">
           <div class="col-sm-3 col-12">
-            <?= $prods->getNProducto();?> 
+            <b> <?= $prods->getNProducto();?> </b>
           </div>
           <div class="col-lg-3 hd">
-            <?= "Ingredientes" ?>
+            <b> Ingredientes </b>
           </div>
           <div class="col-lg-3 hd">
-          <?=  "Cantidad" ?>
+          <b>  Cantidad </b>
           </div>
           <div class="col-lg-3 hd">
-          <?=  "Precio" ?> 
+          <b> Precio </b> 
           </div>
           
         </div>
@@ -83,7 +83,7 @@ if (count($_SESSION['Sel'])== 0) {?>
           ?>
           <div class="row">
           <div class="col-lg-3 col-sm-12">
-            <?= $prods->getNProducto();?> 
+            <b><?= $prods->getNProducto();?> </b>
           </div>
           </div>
         <?php }?>
@@ -108,7 +108,7 @@ if (count($_SESSION['Sel'])== 0) {?>
           </div>
           <div class="col-lg-3 mt-5 col-sm-12">
           <?php ;  ?>
-            <?=  $pedido->calculaPrecio(); ?>€
+            <b><?=  $pedido->calculaPrecio(); ?>€</b>
           </div>
         </div>
         <hr id="bar" style="border: 2px;">
@@ -124,14 +124,14 @@ if (count($_SESSION['Sel'])== 0) {?>
         <h4>TOTAL:</h4>
         </div>
         <div class="col-lg-3 col-sm-6">
-        <h5><?= $ptot?>€</h5>
+        <h5><b><?= $ptot?>€</b></h5>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-8">
         </div>
         <div class="col-lg-2 col-sm-12">
-          <form action="http://primerproyectorecasens.com/modelo/realizarPedido.php" method="post">
+          <form action="http://primerproyectorecasens.com/modelo/realizarCompra.php" method="post">
         <button class="boton mt-3 compra" type="Submit" name="comp"style="float: right;" >Comprar</button>
           </form>
         </div>

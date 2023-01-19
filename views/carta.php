@@ -41,7 +41,7 @@
        <h3 style="margin-top:2%; margin-left:4%; color:#49111C"><?= $titulo;?></h3>
    <?php } ?>
    
-   <div class="prodsCarta col-sm-12 col-lg-3 mt-2 mb-2">
+   <div class="prodsCarta col-12 col-lg-2 mt-2 mb-2">
     <label class="imgCarta" style="background-image: url(../assets/images/<?= $prods->getIdProd()?>.png);">
     <div>
       <p style="font-size: 1rem; padding-top:5%;" >
