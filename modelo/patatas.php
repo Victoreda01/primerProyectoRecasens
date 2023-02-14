@@ -3,11 +3,11 @@ include_once 'productos.php';
 
 class patata extends productos{
 
-    protected $tipo;
-    protected $salsa;
+    protected $tipo = "patata";
+    protected $salsa = "ketchup";
 
 
-    public function __construct($idProd,$nProducto,$tProd,$pProd,$tipo,$salsa,$size,$dProd){
+    public function __construct($idProd,$nProducto,$tProd,$pProd,$size,$dProd,$tipo,$salsa){
       Parent::__construct($idProd,$nProducto,$tProd,$pProd,$size,$dProd);
       $this->tipo = $tipo;
       $this->salsa = $salsa;

@@ -16,6 +16,8 @@ require_once('../config/listaProds.php');
 session_start();
 if (isset($_SESSION['Sel'])) {
   if (isset($_POST['idprod'])) {
+    var_dump($_POST['idprod']);
+
     $prodSel = new pedido($productos[$_POST['idprod']]);
     array_push($_SESSION['Sel'], $prodSel);
   }
@@ -55,7 +57,6 @@ if (count($_SESSION['Sel'])== 0) {?>
     /* Mostramos todos los pedidos guardados en la session*/
     
     $ptot = 0;
-    
     foreach ($_SESSION['Sel'] as $pedido) {
         $prods = $pedido->getProducto();
         
@@ -89,13 +90,13 @@ if (count($_SESSION['Sel'])== 0) {?>
         <?php }?>
         <div class="row justify-content-center">
           <div class="col-lg-3 col-sm-12">
-          <img src="../assets/images/<?=$prods->getIdProd()?>.png" alt="<?=$prods->getNProducto()?>"  width="125px" height="125px">
+          <img src="../assets/images/webp/<?=$prods->getIdProd()?>.webp" alt="<?=$prods->getNProducto()?>"  width="125px" height="125px">
           </div>
           <div class="col-lg-3 mt-5 col-sm-12">
           <button type="button" class="boton">Modificar Pedido</button>
           </div>
           <div class="col-lg-3 mt-5 col-sm-12">
-          <form action="http://primerproyectorecasens.com/modelo/añadirProducto.php" method="post">
+          <form action="http://primerproyectorecasens.com/config/añadirProducto.php" method="post">
                       <input type="hidden" name="idprod" value=<?=$prods->getIdProd()?>>
                       <input type="hidden" name="pos" value=<?=$pos?>>
                       <div class="botonP">
@@ -131,7 +132,7 @@ if (count($_SESSION['Sel'])== 0) {?>
         <div class="col-lg-8">
         </div>
         <div class="col-lg-2 col-sm-12">
-          <form action="http://primerproyectorecasens.com/modelo/realizarCompra.php" method="post">
+          <form action="http://primerproyectorecasens.com/config/realizarCompra.php" method="post">
         <button class="boton mt-3 compra" type="Submit" name="comp"style="float: right;" >Comprar</button>
           </form>
         </div>

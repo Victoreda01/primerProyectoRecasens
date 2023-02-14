@@ -1,7 +1,7 @@
 <?php 
-require_once('productos.php');
-require_once('pedidos.php');
-require_once('../config/listaProds.php');
+require_once('../modelo/productos.php');
+require_once('../modelo/pedidos.php');
+require_once('listaProds.php');
 session_start();
 
 

@@ -1,8 +1,8 @@
 
 <?php 
-require_once('productos.php');
-require_once('pedidos.php');
-require_once('../config/listaProds.php');
+require_once('../modelo/productos.php');
+require_once('../modelo/pedidos.php');
+require_once('listaProds.php');
 session_start();
 
 
@@ -48,17 +48,19 @@ session_start();
             }
         }
        }
+       echo "<pre>",var_dump($prodId),"</pre>";
        
 
     if(!$existe){
-        $prodSel = new pedido($listaProds[$prodId]);
+        
+        $prodSel = new pedido($listaProds[$pos]);
         array_push($_SESSION['Sel'],$prodSel);
         echo "Objeto Inexistente, Se ha Creado";
     }
 
-  if (isset($_POST['addCarta'])) {
+    if (isset($_POST['addCarta'])) {
         header("Location: http://primerproyectorecasens.com/views/carta.php");
     }else{
         header("Location: http://primerproyectorecasens.com/views/carrito.php");
-    } 
+    }
 ?>

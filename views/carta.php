@@ -34,6 +34,7 @@
     <?php
     $titulo = '';
     $pos = 0;
+
     foreach($listaProds as $prods){?>
     
     <?php if ($prods->getTProd() != $titulo) {
@@ -42,7 +43,7 @@
    <?php } ?>
    
    <div class="prodsCarta col-12 col-lg-2 mt-2 mb-2">
-    <label class="imgCarta" style="background-image: url(../assets/images/<?= $prods->getIdProd()?>.png);">
+    <label class="imgCarta" style="background-image: url(../assets/images/webp/<?= $prods->getIdProd()?>.webp);">
     <div>
       <p style="font-size: 1rem; padding-top:5%;" >
         <?= $prods->getNProducto()?>
@@ -54,7 +55,7 @@
 </label>
     
     
-    <form action="../modelo/añadirProducto.php" method="post">
+    <form action="../config/añadirProducto.php" method="post">
     <input type="hidden" name="idprod" value=<?= $prods->getIdProd();?>></input>
     <input type="hidden" name="pos" value=<?= $pos;?>></input>
     <div class="subPr pt-1">

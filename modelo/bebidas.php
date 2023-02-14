@@ -2,9 +2,9 @@
     
 class bebida extends Productos{
     
-    public $marca;
+    public $marca = "Generica";
 
-    public function __construct($idProd,$nProducto,$tProd,$pProd, $marca, $size,$dProd){
+    public function __construct($idProd,$nProducto,$tProd,$pProd,$size,$dProd,$marca){
         Parent::__construct($idProd,$nProducto,$tProd,$pProd,$size,$dProd);
         $this->$marca = $marca;
   

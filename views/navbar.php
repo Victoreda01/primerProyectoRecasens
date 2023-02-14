@@ -26,8 +26,6 @@
                 </div>
                 </nav>
                 </div>
-                
-
             </div>
         </div>
         <nav class="d-none d-sm-block barra">

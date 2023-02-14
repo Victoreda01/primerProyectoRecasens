@@ -2,9 +2,9 @@
     
 class tapa extends Productos{
     
-    public $ingredientes = [];
+    public $ingredientes = "Aceite";
 
-    public function __construct($idProd,$nProducto,$tProd,$pProd,$ingredientes,$size,$dProd){
+    public function __construct($idProd,$nProducto,$tProd,$pProd,$size,$dProd,$ingredientes){
         Parent::__construct($idProd,$nProducto,$tProd,$pProd,$size,$dProd);
         $this->$ingredientes = $ingredientes;
   
