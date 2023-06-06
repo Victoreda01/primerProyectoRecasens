@@ -27,8 +27,6 @@
 		require_once 'views/cabecera.php'; 
 		?>
 	<body>
-		
-
 		<div class="container">
 			<div class="container centro" style="background-color: #F2F4F3;">			
 

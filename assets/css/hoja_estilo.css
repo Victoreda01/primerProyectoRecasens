@@ -68,6 +68,48 @@ a:hover{
   margin-right: 5%;
 }
 
+
+/*FORMULARIOS LOGIN Y REGISTER*/
+.formReg {
+  margin: auto;
+  margin-top: 100px;
+  max-width: 500px;
+  background-color: #F2F4F3;
+  padding: 20px;
+  border-radius: 10px;
+  color: #49111C;
+}
+
+.lReg {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.iReg {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #FDE1C8;
+}
+
+.bReg{
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #49111C;
+  color: #F2F4F3;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.bReg:hover {
+  background-color: #722040;
+} 
 /* Classes modificades sobre bootstrap */
 
 
@@ -663,4 +705,46 @@ th{
       display: none;
   }
   
+
+.formReg {
+  margin: auto;
+  margin-top: 100px;
+  max-width: 500px;
+  background-color: #F2F4F3;
+  padding: 20px;
+  border-radius: 10px;
+  color: #49111C;
+}
+
+.lReg {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.iReg {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #FDE1C8;
+}
+
+.bReg{
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #49111C;
+  color: #F2F4F3;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.bReg:hover {
+  background-color: #722040;
+} 
+
 }
