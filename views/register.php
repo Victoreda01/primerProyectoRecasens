@@ -24,7 +24,7 @@ if (isset($_POST['register'])) {
     $res = $resultado->fetch_assoc();
     if ($res["count(*)"] > 0) {
         echo '<script>alert("Este mail ya existe. Prueba a loggearte!");</script>';
-        header("Location: http://primerproyectorecasens.com/views/login.php");
+        header("Location: http://www.primerproyectorecasens.com/views/login.php");
 
     }else{
         $conn2 = Database::conexion();
@@ -44,10 +44,10 @@ if (isset($_POST['register'])) {
  
         if ($result) {
             echo '<p class="success">Te has registrado Correctamente!</p>';
-             header("Location: http://primerproyectorecasens.com/views/login.php");
+             header("Location: http://www.primerproyectorecasens.com/views/login.php");
         } else {
             echo '<p class="error">Algo ha ido Mal!</p>';
-            header("Location: http://primerproyectorecasens.com/views/register.php");
+            header("Location: http://www.primerproyectorecasens.com/views/register.php");
         }
     }
 

@@ -1,16 +1,23 @@
 
 <?php 
-require_once('../modelo/productos.php');
-require_once('../modelo/pedidos.php');
-require_once('listaProds.php');
+
+require_once('../db/database.php');
+include_once('../modelo/productoDAO.php');
+include_once('../modelo/pedidoDAO.php');
+include_once('../modelo/pedidos.php');
+include_once('../modelo/productos.php');
+
+include_once('../modelo/bocatas.php');
+include_once('../modelo/patatas.php');
+include_once('../modelo/bebidas.php');
+include_once('../modelo/tapas.php');
+
+
+
+$pDAO = new productoDAO();
+$listaProds = array();
+$listaProds = $pDAO->CargarProductos();
 session_start();
-
-
-
-    
-    if (!isset($_SESSION['Sel'])) {
-        $_SESSION['Sel'] = array(); 
-    }
 
     $prodId = $_POST['idprod'];
     $pos = $_POST['pos'];
@@ -56,11 +63,13 @@ session_start();
         $prodSel = new pedido($listaProds[$pos]);
         array_push($_SESSION['Sel'],$prodSel);
         echo "Objeto Inexistente, Se ha Creado";
+        var_dump($listaProds[$pos]);
     }
+    
 
     if (isset($_POST['addCarta'])) {
-        header("Location: http://primerproyectorecasens.com/views/carta.php");
+        header("Location: http://www.primerproyectorecasens.com/?c=carta");
     }else{
-        header("Location: http://primerproyectorecasens.com/views/carrito.php");
+        header("Location: http://www.primerproyectorecasens.com/?c=carrito");
     }
 ?>

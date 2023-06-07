@@ -9,33 +9,22 @@
     <title>CARTA</title>
 </head>
 <body>
-    <?php 
-    require_once('../modelo/pedidos.php');
-    require_once('../modelo/productos.php');
-    require_once('../config/listaProds.php');
-    session_start();
-    
-    
-    
-
-    if (!isset($_SESSION['Sel'])) {
-        $_SESSION['Sel'] = array(); 
-    
-          }
-          require_once('../views/navbar.php');
-    ?>
     <div class="container">
       <div class="container-sm bg-color1 centro">
-        
-
-    
     <ul>
     <div class="row pt-4 pb-5">    
     <?php
+
+
     $titulo = '';
     $pos = 0;
 
-    foreach($listaProds as $prods){?>
+    $pDao = new productoDAO();
+    $listaProds = array(); 
+    $listaProds = $pDao->CargarProductos();
+    foreach($listaProds as $prods){
+      ?>
+    
     
     <?php if ($prods->getTProd() != $titulo) {
        $titulo = $prods->getTProd();?>
@@ -55,7 +44,7 @@
 </label>
     
     
-    <form action="../config/añadirProducto.php" method="post">
+    <form action=<?= base_url('/config/añadirProducto.php')?> method="post">
     <input type="hidden" name="idprod" value=<?= $prods->getIdProd();?>></input>
     <input type="hidden" name="pos" value=<?= $pos;?>></input>
     <div class="subPr pt-1">
@@ -78,7 +67,6 @@
     </ul>
     </div>
   </div>
-    <?php require_once 'footer.php'; ?>
 </body>
 </html>
 		

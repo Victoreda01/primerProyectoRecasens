@@ -9,33 +9,20 @@
 		<script src="../assets/js/bootstrap.min.js"></script>
     <title>CARRITO</title>
 </head>
-<?php 
-require_once('../modelo/productos.php');
-require_once('../modelo/pedidos.php');
-require_once('../config/listaProds.php');
-session_start();
-if (isset($_SESSION['Sel'])) {
-  if (isset($_POST['idprod'])) {
-    var_dump($_POST['idprod']);
-
-    $prodSel = new pedido($productos[$_POST['idprod']]);
-    array_push($_SESSION['Sel'], $prodSel);
-  }
-}else{
-  $_SESSION['Sel'] = array(); 
-}
-
-
-?>
 <body>
   <!-- Si no Hay nada en el carrito Se Muestra esto -->
 <?php 
-require_once('../views/navbar.php');
+
 $pos = 0;
 if (count($_SESSION['Sel'])== 0) {?>
   <div class="container bg-color1">
+    
     <div class="container">
+    <div class="d-flex justify-content-end align-items-center ">
+    <a href=<?= base_url('?c=Pedidos')?>><button class="mPedidos align-self-right boton mt-4">Mis Pedidos</button></a>
+  </div>
     <div class="NoCompra d-lg-flex justify-content-center align-items-center">
+      
       <h2>No Se Ha Realizado Ninguna Compra..</h2>
     </div>
     </div>
@@ -44,16 +31,13 @@ if (count($_SESSION['Sel'])== 0) {?>
   <?php }else{?>
   <div class="container bg-color1">
 <div class="d-flex justify-content-end align-items-center ">
-  <button class="mPedidos align-self-right boton mt-4">Mis Pedidos</button>
+  <a href=<?= base_url('?c=Pedidos')?>><button class="mPedidos align-self-right boton mt-4">Mis Pedidos</button><a>
   </div>
   <div class="container NoCompra">
 
   <div class="container mb-5 mt-5 tCarrito">
     <?php
-    /*Si la session no existe se Crea */
-    if (!isset($_SESSION['Sel'])) {
-      $_SESSION['Sel'] = array(); 
-  }
+
     /* Mostramos todos los pedidos guardados en la session*/
     
     $ptot = 0;
@@ -96,7 +80,7 @@ if (count($_SESSION['Sel'])== 0) {?>
           <button type="button" class="boton">Modificar Pedido</button>
           </div>
           <div class="col-lg-3 mt-5 col-sm-12">
-          <form action="http://primerproyectorecasens.com/config/añadirProducto.php" method="post">
+          <form action=<?= base_url('config/añadirProducto.php')?> method="post">
                       <input type="hidden" name="idprod" value=<?=$prods->getIdProd()?>>
                       <input type="hidden" name="pos" value=<?=$pos?>>
                       <div class="botonP">
@@ -116,6 +100,7 @@ if (count($_SESSION['Sel'])== 0) {?>
         <?php
         $pos++;
         $ptot += $pedido->calculaPrecio();
+        $_SESSION['totPed'] = $ptot;
       }
 ?>
       <div class="row justify-content-center">
@@ -132,7 +117,7 @@ if (count($_SESSION['Sel'])== 0) {?>
         <div class="col-lg-8">
         </div>
         <div class="col-lg-2 col-sm-12">
-          <form action="http://primerproyectorecasens.com/config/realizarCompra.php" method="post">
+          <form action=<?= base_url('config/realizarCompra.php')?> method="post">
         <button class="boton mt-3 compra" type="Submit" name="comp"style="float: right;" >Comprar</button>
           </form>
         </div>
@@ -142,7 +127,7 @@ if (count($_SESSION['Sel'])== 0) {?>
     </div>
     </div>    
   </div>
-  <?php } require_once 'footer.php'; ?>
+  <?php }?>
 </body>
 
 </html>

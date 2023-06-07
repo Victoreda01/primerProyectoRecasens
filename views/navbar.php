@@ -5,17 +5,34 @@
                 <div class="col-lg-5"></div>
                 <div class="col-lg-3 col-8" id="titulo">
                     <h2>  
-                       <a href="http://primerproyectorecasens.com/">
+                       <a href=<?= base_url(''); ?>>
                             BOCATAPAS 
                         </a>
                     </h2>
                 </div>
                 <div class="offset-lg-1 col-lg-1 col-1" >
-                  <a href="http://primerproyectorecasens.com/views/carrito.php">
+                  <a href=<?= base_url('?c=carrito');?>>
                         <div id="carro">
                             <?= count($_SESSION['Sel']) ?>
                         </div>
                     </a>
+                </div>
+                <div class="offset-lg-1 col-lg-1 col-1" >
+                  <div>
+                  <?php
+                            if (isset($_POST['StopSession'])) {
+                              echo "HOLA";
+                              session_destroy();
+                              header("Location: http://www.primerproyectorecasens.com/views/login.php");
+                              exit;
+                            }
+                            ?>
+                            <form action="" method="post">
+                        <button class="botonCarta"type="submit" name="StopSession"></button>
+                        </form>
+                            
+                     </div>       
+
                 </div>
                 <div class="col-lg-1 col-2" >
                 <nav class="navbar navbar-dark bg-dark d-sm-none">
@@ -39,7 +56,7 @@
            OFERTAS
         </div>
         <div class="col-lg-2 col-2 abarra">
-        <a href="http://primerproyectorecasens.com/views/carta.php">
+        <a href=<?= base_url('?c=carta'); ?>>
             CARTA
             </a>
         </div>
@@ -62,7 +79,7 @@
     <a href="#">NOVEDADES</a><hr>
     <a href="#">CONTACTO</a><hr>
     <a href="#">OFERTAS</a><hr>
-    <a href="http://primerproyectorecasens.com/views/carta.php">CARTA</a><hr>
+    <a href=<?= base_url('?c=carta'); ?>>CARTA</a><hr>
     
   </div>
 </div>

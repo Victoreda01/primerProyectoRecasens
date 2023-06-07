@@ -1,8 +1,9 @@
 <?php
  
- include_once '../db/database.php';
+ include_once('../db/database.php');
+ include_once('../base_url.php'); 
  session_start();
- 
+
 if (isset($_POST['login'])) {
 
     $conn = Database::conexion();
@@ -16,21 +17,18 @@ if (isset($_POST['login'])) {
  
     $aaaa = $query->get_result();
     $result = $aaaa->fetch_assoc();
-
- 
+    
     if (!$result) {
-        echo '<p class="error">Username password combination is wrong!</p>';
+        echo '<p class="error">El usuario no existe!</p>';
     } else {
         if (password_verify($pass, $result['password'])) {
-            $_SESSION['id_user'] = $result['id_user'];
-            echo '<p class="success">Congratulations, you are logged in!</p>';
-            header("Location: http://primerproyectorecasens.com/index.php");
+            $_SESSION['id_user'] = array($result['id_user'],$result['nombre_user'], $result['rol']);
+            header("Location: http://www.primerproyectorecasens.com/index.php");
         } else {
-            echo '<p class="error">Username password combination is wrong!</p>';
+            echo '<p class="error">La contraseña no es correcta!</p>';
         }
     }
 }
- 
 ?>
 <html lang="en">
 <head>
@@ -41,6 +39,7 @@ if (isset($_POST['login'])) {
     <link rel="stylesheet" href="../assets/css/hoja_estilo.css">
 </head>
 <body>
+<?php     ?>
 <form method="post" action="" name="signin-form" class="formReg">
     <div class="form-element">
         <label class="lReg">Username</label>
@@ -50,6 +49,7 @@ if (isset($_POST['login'])) {
         <label class="lReg">Password</label>
         <input type="password" class="iReg" name="password" required />
     </div>
+    
     <button type="submit" class="bReg" name="login" value="login">Log In</button>
 </form>
 </body>

@@ -7,7 +7,7 @@
             <h2 >T'APATECE ALGO...</h2>
             <p>Como por ejemplo un bocadillo de jamon y queso con tomate...<br>
             o unas patatas bravas con una clarita...</p>
-            <div><a href="http://localhost/primerProyectoRecasens/views/carta.php">PIDELO YA!!!</a></div>
+            <div><a href=<?= base_url('?c=Carta'); ?>>PIDELO YA!!!</a></div>
         </div>
     
     </div>
