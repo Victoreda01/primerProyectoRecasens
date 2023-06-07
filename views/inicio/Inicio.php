@@ -79,6 +79,27 @@
 				</div>
 			</div>
 		</div>
-		<script src="assets/js/bootstrap.min.js"></script>
+		
+		
+		<script src="/assets/js/bootstrap.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  var dropdownButton = document.getElementById("myDropdownButton");
+  var dropdownMenu = document.getElementById("myDropdown");
+
+  dropdownButton.addEventListener("click", function() {
+    dropdownMenu.classList.toggle("show");
+  });
+
+  window.addEventListener("click", function(event) {
+    if (!event.target.matches(".dropdown-toggle")) {
+      if (dropdownMenu.classList.contains("show")) {
+        dropdownMenu.classList.remove("show");
+      }
+    }
+  });
+});
+</script>
 	</body>
+	
 </html>

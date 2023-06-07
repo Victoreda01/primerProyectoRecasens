@@ -23,6 +23,7 @@
     $listaProds = array(); 
     $listaProds = $pDao->CargarProductos();
     foreach($listaProds as $prods){
+      
       ?>
     
     

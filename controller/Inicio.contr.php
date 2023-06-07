@@ -17,6 +17,8 @@ class InicioController {
             header("Location: views/login.php");
             exit();
         }else{
+            header('Content-Type: text/html; charset=utf-8');
+
             include_once('base_url.php');
             if (isset($_SESSION['Sel'])) {
                 if (isset($_POST['idprod'])) {

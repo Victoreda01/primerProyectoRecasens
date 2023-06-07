@@ -4,7 +4,7 @@
     <div class="row Pi">
         <div class="col-lg-2 col-6 mt-3">
             <ul style="text-align:left;">
-                <a href=<?= base_url('/views/politicas.php')?>><li>Politicas de Privacidad</li></a>
+                <a href=<?= base_url('?c=Politicas')?>><li>Politicas de Privacidad</li></a>
                 <li>Contactanos</li>
             </ul>
         </div>

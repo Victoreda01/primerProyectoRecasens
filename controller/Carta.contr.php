@@ -9,6 +9,9 @@ class CartaController {
         //$this->model=new producto();
     }
     public function Inicio() {
+
+        header('Content-Type: text/html; charset=utf-8');
+
         include_once('modelo/productos.php');
         include_once('modelo/pedidos.php');
         include_once('modelo/productoDAO.php');

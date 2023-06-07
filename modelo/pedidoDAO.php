@@ -16,7 +16,7 @@ class pedidoDAO{
 
 
         $conn = Database::conexion();
-        
+        mysqli_set_charset($conn, "utf8");
         $stmt = $conn->prepare("SELECT ped.id_pedido, u.nombre_user, ped.metodo_pago,group_concat(prod.nombre_producto SEPARATOR ',') as productos ,group_concat(pp.cantidad SEPARATOR '-') as cantidad, group_concat( pp.precio_unidad separator '-') as precios, ped.total_pedido 
         from pedidos ped 
         inner join users u on ped.id_user = u.id_user 
@@ -38,10 +38,10 @@ class pedidoDAO{
     }
 
 
-        public static function añadirPedido($idUsuario, $metodoPago, $totalPedido, $fechaPago, $ordenPedido, array $productos) {
+        public static function añadirPedido($idUsuario, $metodoPago, $totalPedido, $fechaPago, $ordenPedido, $productos) {
 
             $conn = Database::conexion();
-
+            mysqli_set_charset($conn, "utf8");
             $stmt = $conn->prepare("INSERT INTO pedidos (id_user, metodo_pago, total_pedido, fecha_pago, orden_pedido) VALUES (?, ?, ?, ?, ?)");
             $stmt->bind_param("isdss", $idUsuario, $metodoPago, $totalPedido, $fechaPago, $ordenPedido);
             $stmt->execute();

@@ -20,7 +20,7 @@ class productoDAO{
 
 
         $conn = Database::conexion();
-        
+        mysqli_set_charset($conn, "utf8");
         $stmt = $conn->prepare("SELECT DISTINCT  p.id_producto,p.nombre_producto ,c.nombre_cat ,p.precio_producto ,p.`size` ,p.descripcion_producto  FROM producto p
         inner join categorias c where p.cat = c.id_cat 
         ORDER BY cat asc");
@@ -65,6 +65,7 @@ class productoDAO{
     public static function getByType($type)
     {
             $conn = Database::conexion();
+            mysqli_set_charset($conn, "utf8");
             $stmt = $conn->prepare("SELECT p.id_producto,p.nombre_producto ,c.nombre_cat ,p.precio_producto ,p.`size` ,p.descripcion_producto FROM producto p 
             inner join categorias c WHERE p.cat = c.id_cat AND c.nombre_cat = $type
             ORDER BY cat ASC");
@@ -106,6 +107,7 @@ class productoDAO{
     public static function modifyProducto($id_prod,$nom_prod,$cate,$precio_prod,$size,$desc_prod){
 
         $conn = Database::conexion();
+        mysqli_set_charset($conn, "utf8");
         $stmt = $conn->prepare("UPDATE producto 
         SET nombre_producto = $nom_prod, 
             cat = $cate, 
@@ -126,6 +128,7 @@ class productoDAO{
 
     public static function anadirProducto($nom_prod,$cate,$precio_prod,$size,$desc_prod){
         $conn = Database::conexion();
+        mysqli_set_charset($conn, "utf8");
         $stmt = $conn->prepare("INSERT INTO producto (nombre_producto, cat, precio_producto, `size`, descripcion_producto)
         VALUES ('$nom_prod', '$cate', $precio_prod, '$size', '$desc_prod');");
         $stmt->execute();
@@ -141,6 +144,7 @@ class productoDAO{
 
     public static function EliminarProducto($id_prod){
         $conn = Database::conexion();
+        mysqli_set_charset($conn, "utf8");
         $stmt = $conn->prepare("DELETE FROM producto WHERE id_producto = $id_prod;");
         $stmt->execute();
 
