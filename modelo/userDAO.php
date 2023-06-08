@@ -46,15 +46,14 @@ class userDAO
 
         return $user;
     }
-    public static function ModUserById($id,$nombreUsuario, $apellidos,$email, $domicilio, $password_hash)
+    public static function ModUserById($id,$nombreUsuario, $apellidos,$email, $domicilio, $password_hash,$rol)
     {
         
         $conn = Database::conexion();
         mysqli_set_charset($conn, "utf8");
-        $stmt = $conn->prepare("UPDATE users SET nombre_user = ?, apellidos = ?, email = ? ,domicilio = ?, password = ? WHERE id_user = $id");
+        $stmt = $conn->prepare("UPDATE users SET nombre_user = ?, apellidos = ?, email = ? ,domicilio = ?, password = ?, rol=? WHERE id_user = $id");
 
-        $stmt->bind_param("sssss", $nombreUsuario, $apellidos, $email, $domicilio, $password_hash);
-        $stmt->execute();
+        $stmt->bind_param("ssssss", $nombreUsuario, $apellidos, $email, $domicilio, $password_hash,$rol);
 
         $msg = "";
         if ($stmt->execute()) {
@@ -73,7 +72,22 @@ class userDAO
         mysqli_set_charset($conn, "utf8");
         $stmt = $conn->prepare("INSERT INTO users (nombre_user, apellidos, email, password, fecha_registro, domicilio, rol) VALUES (?, ?, ?, ?, ?, ?, ?)");
         $stmt->bind_param("ssssdss", $nombre_user, $apellidos, $email, $password_hash, $fechaReg,$dom,$rol);
-        $stmt->execute();
+
+        $msg = "";
+        if ($stmt->execute()) {
+            $msg = "Todo Correcto";
+        }else{
+            $msg = "Error al Añadir";
+        }
+        return $msg;
+
+    }
+    public static function delUser($id)
+    {
+
+        $conn = Database::conexion();
+        mysqli_set_charset($conn, "utf8");
+        $stmt = $conn->prepare("DELETE FROM USERS WHERE id_user = $id");
 
         $msg = "";
         if ($stmt->execute()) {

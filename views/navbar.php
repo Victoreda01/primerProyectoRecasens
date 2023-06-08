@@ -1,39 +1,67 @@
-<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-<link rel="stylesheet" href="assets/css/hoja_estilo.css">
-<header >
+<!DOCTYPE HTML>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOCATAPAS</title>
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/hoja_estilo.css">
+</head>
+<header>
   <div class="container">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-lg-5"></div>
-        <div class="col-lg-3 col-8" id="titulo">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4 col-8" id="titulo">
           <h2>
             <a href=<?= base_url(''); ?>>
               BOCATAPAS
             </a>
           </h2>
         </div>
-        <div class="offset-lg-1 col-lg-1 col-1" >
-                  <a href=<?= base_url('?c=carrito'); ?>>
-                        <div id="carro">
-                            <?= count($_SESSION['Sel']) ?>
-                        </div>
-                    </a>
-                </div> 
-        <div class="col-lg-1 col-1">
-          <div class="dropdown">
-            <a class="dropdown-toggle" id="myDropdownButton">
-              <div id="Session"></div>
-            </a>
-            <div class="dropdown-menu" id="myDropdown">
-              <a href=<?= base_url('?c=EditPerfil'); ?>>Editar Mi Perfil</a>
-              <a href=<?= base_url('?c=carrito'); ?>>Carrito <p><?= count($_SESSION['Sel']) ?></p></a>
-              <a href=<?= base_url('?c=Pedidos'); ?>>Mis Pedidos</a>
-              <a href="../config/cerrar_session.php">Cerrar Session</a>
+        <div class="offset-lg-1 col-lg-1 col-1 ">
+          <a href=<?= base_url('?c=carrito'); ?>>
+            <div id="carro">
+              <?= count($_SESSION['Sel']) ?>
+            </div>
+          </a>
+        </div>
+        <?php if ($_SESSION['id_user'][2] == "admin") {
+        ?>
 
+          <div class="col-lg-1 col-1 user">
+            <div class="dropdown">
+              <a class="dropdown-toggle" id="myDropdownButton">
+                <div id="Session"></div>
+              </a>
+              <div class="dropdown-menu" id="myDropdown">
+                <a href=<?= base_url('?c=Users&a=Editar'); ?>>Editar Mi Perfil</a>
+                <a href=<?= base_url('?c=Users'); ?>>Editar Usuarios</a>
+                <a href=<?= base_url('?c=Productos'); ?>>Editar Productos</a>
+                <a href=<?= base_url('?c=carrito'); ?>>Carrito <p><?= count($_SESSION['Sel']) ?></p></a>
+                <a href=<?= base_url('?c=Pedidos'); ?>>Mis Pedidos</a>
+                <a href="../config/cerrar_session.php">Cerrar Session</a>
+
+              </div>
             </div>
           </div>
-        </div>
+        <?php } else { ?>
+          <div class="col-lg-1 col-1 user">
+            <div class="dropdown">
+              <a class="dropdown-toggle" id="myDropdownButton">
+                <div id="Session"></div>
+              </a>
+              <div class="dropdown-menu" id="myDropdown">
+                <a href=<?= base_url('?c=Users&a=Editar'); ?>>Editar Mi Perfil</a>
+                <a href=<?= base_url('?c=carrito'); ?>>Carrito <p><?= count($_SESSION['Sel']) ?></p></a>
+                <a href=<?= base_url('?c=Pedidos'); ?>>Mis Pedidos</a>
+                <a href="../config/cerrar_session.php">Cerrar Session</a>
 
+              </div>
+            </div>
+          </div>
+        <?php } ?>
       </div>
       <div class="col-lg-1 col-2">
         <nav class="navbar navbar-dark bg-dark d-sm-none">
@@ -49,23 +77,26 @@
   <nav class="d-none d-sm-block barra">
     <div class="container barrasm">
       <div class="container">
-        <div class="row barra">
-          <div class="col-lg-3 col-3 abarra">
+        <div class="row barra ml-1">
+
+          <div class="col-lg-2 col-3 abarra">
             SUGERENCIAS
           </div>
           <div class="col-lg-2 col-2 abarra">
             OFERTAS
           </div>
-          <div class="col-lg-2 col-2 abarra">
+          <div class="col-lg-1"></div>
+          <div class="col-lg-1 col-2 abarra">
             <a href=<?= base_url('?c=carta'); ?>>
               CARTA
             </a>
           </div>
-
-          <div class="col-lg-2 col-3 abarra">
+          <div class="col-lg-1"></div>
+          <div class="col-lg-2 col-2 abarra">
             NOVEDADES
           </div>
-          <div class="col-lg-3 col-2 abarra">
+
+          <div class="col-lg-2 col-2 abarra">
             CONTACTO
           </div>
         </div>

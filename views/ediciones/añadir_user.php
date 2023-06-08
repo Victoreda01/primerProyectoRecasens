@@ -38,37 +38,35 @@
             </style>
             <?php
 
-            $usDAO = new userDAO();
-            $objUser = $usDAO->getUserById($_POST['id_usuario']);
             ?>
+<h2> Añadir Usuario </h2>
 
-            <form action="/config/modificar_user.php" method="post">
-                <div id="user_id"> ID Usuario: <input type="number" name="user_id" value="<?= $objUser->id_user ?>" style="border: none; width:3rem;" readonly></input></div>
+            <form action="/config/add_User.php" method="post">
                 <table>
 
                     <tbody>
                         <tr>
                             <td>
                                 <label for="nombre_usuario">Nombre:</label>
-                                <input class="modifUser" type="text" id="nombre_usuario" name="nombre_usuario" value="<?= $objUser->nombre_user ?>" />
+                                <input class="modifUser" type="text" id="nombre_usuario" name="nombre_usuario" value="" />
                             </td>
 
                             <br>
                             <td>
                                 <label for="apellidos">Apellidos:</label>
-                                <input class="modifUser" type="text" id="apellidos" name="apellidos" value="<?= $objUser->apellidos ?>" />
+                                <input class="modifUser" type="text" id="apellidos" name="apellidos" value="" />
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <label for="email">Email:</label>
-                                <input class="modifUser" type="email" id="email" name="email" value="<?= $objUser->email ?>" />
+                                <input class="modifUser" type="email" id="email" name="email" value="" />
                             </td>
                             <br>
 
                             <td>
                                 <label for="domicilio">Domicilio:</label>
-                                <input class="modifUser" type="text" id="domicilio" name="domicilio" value="<?= $objUser->domicilio ?>" />
+                                <input class="modifUser" type="text" id="domicilio" name="domicilio" value="" />
                             </td>
                         </tr>
                         <?php if (isset($_SESSION['error_message'])) {
@@ -78,8 +76,11 @@
                         } ?>
                         <tr>
                             <td>
-                                <label for="role">Rol:</label>
-                                <input class="modifUser" type="text" name="rol" value="<?= $objUser->rol ?>" />
+                            <label>Rol:</label>
+                            <select name="rol">
+                                    <option value="usuario">Usuario</option>
+                                    <option value="admin">Administrador</option>
+                                </select>
                             </td>
                             <br>
                             <td>
@@ -90,7 +91,7 @@
                         <br>
                         <tr>
                             <td colspan="2" style="text-align:center;">
-                                <input class="boton" type="submit" value="Guardar cambios" name="saveChang" style="padding:5px;" />
+                                <input class="boton" type="submit" value="Añadir User" name="addUSR" style="padding:5px;" />
                             <td>
                         </tr>
                     <tbody>

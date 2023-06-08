@@ -1,16 +1,16 @@
-
 @font-face {
-font-family: "Bellfort";
+  font-family: "Bellfort";
   src: url(../fonts/Bellfort.ttf);
 }
 
-@font-face{
-font-family: "LatoR";
-src: url(../fonts/Lato-Regular.ttf);
+@font-face {
+  font-family: "LatoR";
+  src: url(../fonts/Lato-Regular.ttf);
 }
-@font-face{
-font-family: "LatoI";
-src: url(../fonts/Lato-Italic.ttf);
+
+@font-face {
+  font-family: "LatoI";
+  src: url(../fonts/Lato-Italic.ttf);
 }
 
 :root {
@@ -21,50 +21,52 @@ src: url(../fonts/Lato-Italic.ttf);
   --color5: #efefef;
 
 }
-html{
+
+html {
   overflow-x: hidden;
 }
 
-a{
+a {
   text-decoration: none;
   color: #F2F4F3;
 }
 
-a:hover{
+a:hover {
   color: #F2F4F3;
 }
-.bg-color1{
+
+.bg-color1 {
   background-color: var(--color1);
 }
 
 
-#img1-index{
+#img1-index {
   background-image: url(../images/cabecera.png);
   background-size: 100%;
   background-repeat: no-repeat;
 }
 
-.caja-index{
-  height:35vh;
+.caja-index {
+  height: 35vh;
   font-size: 1.2rem;
 }
 
-.centro{
-  padding-left:4%;
-  padding-right:4%;
+.centro {
+  padding-left: 4%;
+  padding-right: 4%;
 }
 
 
-.sub{
+.sub {
   color: #49111C;
   margin-top: 5%;
 }
 
-.izq{
+.izq {
   margin-left: 5%;
 }
 
-.der{
+.der {
   margin-right: 5%;
 }
 
@@ -95,7 +97,7 @@ a:hover{
   background-color: #FDE1C8;
 }
 
-.bReg{
+.bReg {
   display: block;
   width: 100%;
   padding: 10px;
@@ -109,133 +111,151 @@ a:hover{
 
 .bReg:hover {
   background-color: #722040;
-} 
+}
+
 /* Classes modificades sobre bootstrap */
 
 
-header{
+header {
   color: #F2F4F3;
   background-color: #0A0908;
 }
-footer{
+
+footer {
   color: #F2F4F3;
   background-color: #0A0908;
   font-family: "LatoR";
   font-size: 0.8rem;
 }
-body{
+
+body {
   font-family: "LatoR";
 }
 
-ul{
+ul {
   list-style-type: none;
 }
 
-.barra{
-  color:#F2F4F3;
+.barra {
+  color: #F2F4F3;
   background-color: #0A0908;
+  height: 2rem;
 }
-.abarra{
-  color:#F2F4F3;
+
+.abarra {
+  color: #F2F4F3;
   font-size: 0.8rem;
-  padding: 2px;
+  margin: 3px;
   text-align: center;
+  margin-left: 1rem;
 }
-.abarra:hover{
-  cursor:pointer;
+
+.abarra:hover {
+  cursor: pointer;
   color: #49111C;
   background-color: #FDE1C8;
-  padding:2px;
+  margin: 3px;
   text-align: center;
   transition: 0.5s;
+  margin-left: 1rem;
+}
+.abarra:hover a {
+  color: #49111C;
 }
 
 
-.navbar{
+.navbar {
   height: 6vh;
 }
 
-h2{
+h2 {
   font-family: "Bellfort";
+  text-align: center;
 }
 
-.futer{
+.futer {
   padding-top: 1.5%;
 }
-.rs{
+
+.rs {
   width: 16px;
   height: 16px;
   margin: 5%;
 }
-.rs:hover{
+
+.rs:hover {
   cursor: pointer;
   transition: 0.5s;
 }
 
-#copy{
+#copy {
   padding-left: 12%;
 }
 
 
-#i{
+#i {
   background-image: url(../iconos/i_light_16.png);
 }
 
-#f{
+#f {
   background-image: url(../iconos/f_light_16.png);
 }
 
-#t{
+#t {
   background-image: url(../iconos/t_light_16.png);
 }
 
-#i:hover{
+#i:hover {
   background-image: url(../iconos/i_full_16.png);
   transition: 0.5s;
 }
-  
-#f:hover{
+
+#f:hover {
   background-image: url(../iconos/f_full_16.png);
   transition: 0.5s;
 }
-  
-#t:hover{
+
+#t:hover {
   background-image: url(../iconos/t_full_16.png);
   transition: 0.5s;
 }
 
 /*IMAGENES CARTA*/
-.imgCarta{
+.imgCarta {
   background-repeat: no-repeat;
   background-size: 100%;
   width: 250px;
   height: 250px;
 }
+
 .imgCarta div p {
   visibility: hidden;
   text-align: center;
 }
-.imgCarta:hover{
-  color: #FDE1C8 ;
+
+.imgCarta:hover {
+  color: #FDE1C8;
 }
-.imgCarta:hover div{
+
+.imgCarta:hover div {
   transition: 0.5s;
   width: 100%;
   height: 100%;
   background: rgb(0, 0, 0, 0.6);
 }
 
-.imgCarta:hover p{
+.imgCarta:hover p {
   visibility: visible;
   padding: 5%;
 }
-.prodsCarta{
-  width:15.625rem;
+
+.prodsCarta {
+  width: 15.625rem;
   margin-left: 2%;
   text-align: center;
 }
 
-.botonCarta{
+.botonCarta {
   float: right;
   width: 32px;
   height: 32px;
@@ -245,14 +265,15 @@ h2{
   background-color: #49111C;
   border: none;
 }
-.subPr{
-  width: 250px; 
+
+.subPr {
+  width: 250px;
   height: 38px;
   color: #FDE1C8;
-  background-color:#49111C;
+  background-color: #49111C;
 }
 
-#size{
+#size {
   background-color: #49111C;
   border: none;
   cursor: pointer;
@@ -261,16 +282,18 @@ h2{
 }
 
 /*CARRITO*/
-.boton{
+.boton {
   background-color: #49111C;
   color: #FDE1C8;
   border: none;
   border-radius: 3px;
 }
-.NoCompra{
-  min-height: 100vh;
+
+.NoCompra {
+  min-height: 100rem;
 }
-.botonP{
+
+.botonP {
   background-color: #49111C;
   border-radius: 3px;
   color: #FDE1C8;
@@ -278,92 +301,111 @@ h2{
   width: auto;
   margin-right: 55%;
 }
-.mPedidos{
+
+.mPedidos {
   margin-right: 5%;
-  min-height: 5vh; 
+  min-height: 5vh;
   min-width: 10vw;
 }
-.tCarrito{
+
+.tCarrito {
   margin-right: 10%;
   margin-left: 10%;
 }
 
 /*ICONOS*/
-#carro{
+#carro {
   background-image: url("../iconos/s_white_light_32.png");
   width: 32px;
   height: 32px;
   text-align: center;
-  padding-left:0.3vw;
-  padding-top:0.3vh;
-  font-size:0.75rem;
+  padding-left: 0.3vw;
+  padding-top: 0.3vh;
+  font-size: 0.75rem;
+  margin-left: 9rem;
 }
-#carro:hover{
+
+#carro:hover {
   background-image: url("../iconos/s_white_full_32.png");
   cursor: pointer;
   transition: 0.5s;
 
 }
-
-th{
-  color:#49111C;
+.user{
+  margin-left: 6rem;
 }
-.compra{
+
+th {
+  color: #49111C;
+}
+
+.compra {
   min-width: 10vw;
   text-align: center;
 }
-.Pi{
+
+.Pi {
   font-size: 0.9rem;
 }
-#copy{
+
+#copy {
   font-size: 0.7rem;
   padding-left: 0%;
   text-align: center;
 }
-.tt-pp{
+
+.tt-pp {
   font-size: 1.8rem;
 }
-.pp-pp{
+
+.pp-pp {
   font-size: 1rem;
 }
 
-.carousel-caption h2{
-  font-family: Bellfort; 
-  font-size:3rem; 
-  text-align:left; 
-  margin-bottom:2%;
+.carousel-caption h2 {
+  font-family: Bellfort;
+  font-size: 3rem;
+  text-align: left;
+  margin-bottom: 2%;
   padding-top: 5%;
 }
-.carousel-caption p{
-  font-size:1rem; 
-  text-align:left;
+
+.carousel-caption p {
+  font-size: 1rem;
+  text-align: left;
 }
-.carousel-caption div{
-  font-family: Bellfort; 
-  font-size:1.4rem; 
-  text-align:center;
+
+.carousel-caption div {
+  font-family: Bellfort;
+  font-size: 1.4rem;
+  text-align: center;
 }
-.textoInd{
+
+.textoInd {
   font-size: 1rem;
 }
-#bar{
-    display: none;
+
+#bar {
+  display: none;
 }
-#Session{
+
+#Session {
   background-image: url("../iconos/c_white_light_32.png");
   width: 32px;
   height: 32px;
   text-align: center;
-  padding-left:0.3vw;
-  padding-top:0.3vh;
-  font-size:0.75rem;
+  padding-left: 0.3vw;
+  padding-top: 0.3vh;
+  font-size: 0.75rem;
 }
-#Session:hover{
+
+#Session:hover {
   background-image: url("../iconos/c_white_full_32.png");
   cursor: pointer;
   transition: 0.5s;
 
 }
+
 /*DROPDOWN MENU*/
 .dropdown {
   position: relative;
@@ -381,7 +423,7 @@ th{
   position: absolute;
   background-color: #0A0908;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   padding: 12px 16px;
   z-index: 1;
 }
@@ -392,256 +434,235 @@ th{
   display: block;
   padding: 8px 0;
 }
-.dropdown-menu a p{
+
+.dropdown-menu a p {
   color: #FDE1C8;
   text-decoration: none;
-  float:right;
+  float: right;
 }
 
 .dropdown:hover .dropdown-menu {
   display: block;
 }
+
 /*Tablet*/
-@media (max-width: 1100px){
-  .imgCarta{
+@media (max-width: 1100px) {
+  .imgCarta {
     width: 9.375rem;
     height: 9.375rem;
-    
+
   }
-  .prodsCarta{
-    width:15vw;
+
+  .prodsCarta {
+    width: 15vw;
     margin-left: 2%;
     text-align: center;
   }
-  .sub{
+
+  .sub {
     font-size: 0.9rem;
   }
-  .prodsCarta{
-    width:9.375rem;
+
+  .prodsCarta {
+    width: 9.375rem;
     font-size: 0.75rem;
   }
-  .subPr{
-    width: 200px; 
+
+  .subPr {
+    width: 200px;
   }
 }
 
 
-@media (max-width: 576px){
-  .bg-dark{
+@media (max-width: 576px) {
+  .bg-dark {
     background-color: #0A0908 !important;
   }
-  .navbar{
+
+  .navbar {
     min-height: 64px;
   }
-  .sub{
+
+  .sub {
     font-size: 1.8rem;
   }
-  .hd{
-    display:none;
+
+  .hd {
+    display: none;
   }
-  #bar{
+
+  #bar {
     display: block;
   }
-  .textoInd{
+
+  .textoInd {
     font-size: 1.5rem;
   }
-  
-  #copy{
+
+  #copy {
     font-size: 1.5rem;
     padding-left: 0%;
     text-align: center;
   }
-  .rs{
+
+  .rs {
     width: 32px;
     height: 32px;
     background-size: cover;
     background-repeat: no-repeat;
     margin: 5%;
   }
-  .Pi{
+
+  .Pi {
     font-size: 1.4rem;
   }
-  #reds{
+
+  #reds {
     padding-top: 5%;
     padding-bottom: 10%;
   }
+
+  /*GRAELLAS*/
+  .graella {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 10rem !important;
+    border: 2px solid #0A0908 !important;
+  }
 }
+
+
+
 /*MOBIL*/
-@media (min-width: 576px){
-  
-  html{
+@media (min-width: 576px) {
+
+  html {
     overflow-x: hidden;
   }
-  
-  a{
+
+  a {
     text-decoration: none;
     color: #F2F4F3;
   }
-  
-  a:hover{
-    color: #F2F4F3;
-  }
-  .bg-color1{
+
+  .bg-color1 {
     background-color: var(--color1);
   }
-  
-  
-  #img1-index{
+
+
+  #img1-index {
     background-image: url(../images/cabecera.png);
     background-size: 100%;
     background-repeat: no-repeat;
   }
-  
-  .caja-index{
-    height:35vh;
+
+  .caja-index {
+    height: 35vh;
     font-size: 1.2rem;
   }
-  
-  .centro{
-    padding-left:4%;
-    padding-right:4%;
+
+  .centro {
+    padding-left: 4%;
+    padding-right: 4%;
   }
-  
-  
-  .sub{
+
+
+  .sub {
     color: #49111C;
     margin-top: 5%;
   }
-  
-  .izq{
+
+  .izq {
     margin-left: 5%;
   }
-  
-  .der{
+
+  .der {
     margin-right: 5%;
   }
-  
+
   /* Classes modificades sobre bootstrap */
-  
-  
-  header{
+
+
+  header {
     color: #F2F4F3;
     background-color: #0A0908;
   }
-  footer{
+
+  footer {
     color: #F2F4F3;
     background-color: #0A0908;
     font-family: "LatoR";
     font-size: 0.8rem;
   }
-  body{
+
+  body {
     font-family: "LatoR";
   }
-  
-  ul{
+
+  ul {
     list-style-type: none;
   }
-  
-  .barra{
-    color:#F2F4F3;
+
+  .barra {
+    color: #F2F4F3;
     background-color: #0A0908;
   }
-  .abarra{
-    color:#F2F4F3;
-    font-size: 0.8rem;
-    padding: 2px;
-    text-align: center;
-  }
-  .abarra:hover{
-    cursor:pointer;
-    color: #49111C;
-    background-color: #FDE1C8;
-    padding:2px;
-    text-align: center;
-    transition: 0.5s;
-  }
-  
-  
-  .navbar{
+
+  .navbar {
     height: 6vh;
   }
-  
-  h2{
+
+  h2 {
     font-family: "Bellfort";
   }
-  
-  .futer{
+
+  .futer {
     padding-top: 1.5%;
   }
-  .rs{
+
+  .rs {
     width: 16px;
     height: 16px;
     margin: 5%;
   }
-  .rs:hover{
-    cursor: pointer;
-    transition: 0.5s;
-  }
-  
-  #copy{
+
+  #copy {
     padding-left: 12%;
   }
-  
-  
-  #i{
+
+
+  #i {
     background-image: url(../iconos/i_light_16.png);
   }
-  
-  #f{
+
+  #f {
     background-image: url(../iconos/f_light_16.png);
   }
-  
-  #t{
+
+  #t {
     background-image: url(../iconos/t_light_16.png);
   }
-  
-  #i:hover{
-    background-image: url(../iconos/i_full_16.png);
-    transition: 0.5s;
-  }
-    
-  #f:hover{
-    background-image: url(../iconos/f_full_16.png);
-    transition: 0.5s;
-  }
-    
-  #t:hover{
-    background-image: url(../iconos/t_full_16.png);
-    transition: 0.5s;
-  }
-  
+
   /*IMAGENES CARTA*/
-  .imgCarta{
+  .imgCarta {
     background-repeat: no-repeat;
     background-size: 100%;
     width: 15.625rem;
     height: 15.625rem;
   }
+
   .imgCarta div p {
     visibility: hidden;
     text-align: center;
   }
-  .imgCarta:hover{
-    color: #FDE1C8 ;
-  }
-  .imgCarta:hover div{
-    transition: 0.5s;
-    width: 100%;
-    height: 100%;
-    background: rgb(0, 0, 0, 0.6);
-  }
-  
-  .imgCarta:hover p{
-    visibility: visible;
-    padding: 5%;
-  }
-  .prodsCarta{
-    width:15.625rem;
+
+  .prodsCarta {
+    width: 15.625rem;
     margin-left: 2%;
     text-align: center;
   }
-  
-  .botonCarta{
+
+  .botonCarta {
     float: right;
     width: 32px;
     height: 32px;
@@ -651,32 +672,35 @@ th{
     background-color: #49111C;
     border: none;
   }
-  .subPr{
-    width: 250px; 
+
+  .subPr {
+    width: 250px;
     height: 38px;
     color: #FDE1C8;
-    background-color:#49111C;
+    background-color: #49111C;
   }
-  
-  #size{
+
+  #size {
     background-color: #49111C;
     border: none;
     cursor: pointer;
     color: #FDE1C8;
     float: right;
   }
-  
+
   /*CARRITO*/
-  .boton{
+  .boton {
     background-color: #49111C;
     color: #FDE1C8;
     border: none;
     border-radius: 3px;
   }
-  .NoCompra{
+
+  .NoCompra {
     min-height: 100vh;
   }
-  .botonP{
+
+  .botonP {
     background-color: #49111C;
     border-radius: 3px;
     color: #FDE1C8;
@@ -684,118 +708,120 @@ th{
     width: auto;
     margin-right: 55%;
   }
-  .mPedidos{
+
+  .mPedidos {
     margin-right: 5%;
-    min-height: 5vh; 
+    min-height: 5vh;
     min-width: 10vw;
   }
-  .tCarrito{
+
+  .tCarrito {
     margin-right: 10%;
     margin-left: 10%;
   }
-  
+
   /*ICONOS*/
-  #carro{
+  #carro {
     background-image: url("../iconos/s_white_light_32.png");
     width: 32px;
     height: 32px;
     text-align: center;
-    padding-left:0.3vw;
-    padding-top:0.3vh;
-    font-size:0.75rem;
+    padding-left: 0.3vw;
+    padding-top: 0.3vh;
+    font-size: 0.75rem;
   }
-  #carro:hover{
-    background-image: url("../iconos/s_white_full_32.png");
-    cursor: pointer;
-    transition: 0.5s;
-  
+
+  th {
+    color: #49111C;
   }
-  
-  th{
-    color:#49111C;
-  }
-  .compra{
+
+  .compra {
     min-width: 10vw;
     text-align: center;
   }
-  .Pi{
+
+  .Pi {
     font-size: 0.9rem;
   }
-  #copy{
+
+  #copy {
     font-size: 0.7rem;
     padding-left: 0%;
     text-align: center;
   }
-  .tt-pp{
+
+  .tt-pp {
     font-size: 1.8rem;
   }
-  .pp-pp{
+
+  .pp-pp {
     font-size: 1rem;
   }
-  
-  .carousel-caption h2{
-    font-family: Bellfort; 
-    font-size:3rem; 
-    text-align:left; 
-    margin-bottom:2%;
+
+  .carousel-caption h2 {
+    font-family: Bellfort;
+    font-size: 3rem;
+    text-align: left;
+    margin-bottom: 2%;
     padding-top: 5%;
   }
-  .carousel-caption p{
-    font-size:1rem; 
-    text-align:left;
+
+  .carousel-caption p {
+    font-size: 1rem;
+    text-align: left;
   }
-  .carousel-caption div{
-    font-family: Bellfort; 
-    font-size:1.4rem; 
-    text-align:center;
+
+  .carousel-caption div {
+    font-family: Bellfort;
+    font-size: 1.4rem;
+    text-align: center;
   }
-  .textoInd{
+
+  .textoInd {
     font-size: 1rem;
   }
-  #bar{
-      display: none;
+
+  #bar {
+    display: none;
   }
-  
 
-.formReg {
-  margin: auto;
-  margin-top: 100px;
-  max-width: 500px;
-  background-color: #F2F4F3;
-  padding: 20px;
-  border-radius: 10px;
-  color: #49111C;
-}
 
-.lReg {
-  display: block;
-  margin-bottom: 5px;
-}
+  .formReg {
+    margin: auto;
+    margin-top: 100px;
+    max-width: 500px;
+    background-color: #F2F4F3;
+    padding: 20px;
+    border-radius: 10px;
+    color: #49111C;
+  }
 
-.iReg {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: none;
-  border-radius: 5px;
-  background-color: #FDE1C8;
-}
+  .lReg {
+    display: block;
+    margin-bottom: 5px;
+  }
 
-.bReg{
-  display: block;
-  width: 100%;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  background-color: #49111C;
-  color: #F2F4F3;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
-}
+  .iReg {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FDE1C8;
+  }
 
-.bReg:hover {
-  background-color: #722040;
-} 
+  .bReg {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #49111C;
+    color: #F2F4F3;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+
 
 }

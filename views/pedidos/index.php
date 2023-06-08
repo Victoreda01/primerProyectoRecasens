@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="../../assets/css/hoja_estilo.css">
   <script src="../assets/js/bootstrap.min.js"></script>
-  <title>CARRITO</title>
+  <title>PEDIDOS</title>
 </head>
 
 <body>
@@ -34,11 +34,12 @@
     <?php } else {
     ?>
       <style>
-        table {
+        .graella {
           margin-left: auto;
           margin-right: auto;
-          margin-top: 10rem;
+          margin-top: 5rem;
           border: 2px solid #0A0908;
+          margin-bottom: 3rem;
         }
 
         th,
@@ -46,15 +47,21 @@
           text-align: center;
           border: 2px solid #0A0908;
           padding: 10px 10px 10px 10px;
-          
+
         }
-        td p{
+
+        td p {
           padding-top: 3px;
         }
+        #tit{
+          text-align: center;
+          margin-top: 2rem;
+        }
       </style>
+      <h2 id="tit"> PEDIDOS </h2>
       <div class="container">
         <div class="NoCompra">
-          <table>
+          <table class="graella">
 
             <thead style="border: 2px solid #0A0908">
               <tr>
@@ -85,17 +92,17 @@
                 echo "<td>" . $pedidos->metodo_pago . "</td>";
                 echo "<td style='vertical-align: middle;'>";
                 for ($i = 0; $i < count($prodsep1); $i++) {
-                  echo "<p>". $prodsep1[$i] . "</p>";
+                  echo "<p>" . $prodsep1[$i] . "</p>";
                 }
                 echo "</td>";
                 echo "<td style='vertical-align: middle;'>";
                 for ($i = 0; $i < count($cantsep1); $i++) {
-                  echo "<p>". $cantsep1[$i] . "</p>";
+                  echo "<p>" . $cantsep1[$i] . "</p>";
                 }
                 echo "</td>";
                 echo "<td style='vertical-align: middle;'>";
                 for ($i = 0; $i < count($precsep1); $i++) {
-                  echo "<p>". $precsep1[$i] . "€</p>";
+                  echo "<p>" . $precsep1[$i] . "€</p>";
                 }
                 echo "</td>";
 

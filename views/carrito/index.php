@@ -20,9 +20,20 @@
     <div class="container bg-color1">
 
       <div class="container">
-        <div class="d-flex justify-content-end align-items-center ">
-          <a href=<?= base_url('?c=Pedidos') ?>><button class="mPedidos align-self-right boton mt-4">Mis Pedidos</button></a>
+        <div class="d-flex justify-content-around">
+
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+
+          <a href=<?= base_url('?c=Pedidos') ?>><button class="mPedidos boton mt-4">Mis Pedidos</button></a>
         </div>
+
         <div class="NoCompra d-lg-flex justify-content-center align-items-center">
 
           <h2>No Se Ha Realizado Ninguna Compra..</h2>
@@ -32,8 +43,18 @@
     <!-- Si Hay cosas en el carrito Se Muestra esto -->
   <?php } else { ?>
     <div class="container bg-color1">
-      <div class="d-flex justify-content-end align-items-center ">
-        <a href=<?= base_url('?c=Pedidos') ?>><button class="mPedidos align-self-right boton mt-4">Mis Pedidos</button><a>
+      <div class="d-flex justify-content-around ">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+
+        <a href=<?= base_url('?c=Pedidos') ?>><button class="mPedidos boton mt-4">Mis Pedidos</button><a>
       </div>
       <div class="container NoCompra">
 

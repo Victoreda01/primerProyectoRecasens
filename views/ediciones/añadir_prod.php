@@ -37,23 +37,21 @@
                 }
             </style>
             <?php
-            $pDAO = new productoDAO();
-            $objProd = $pDAO->getById($_POST['id_producto']);
 
             ?>
-            <h2> Añadir Producto </h2>
-            <form action="/config/modificar_prod.php" method="post" enctype="multipart/form-data">
+<h2> Añadir Producto </h2>
+            <form action="/config/add_Prod.php" method="post" enctype="multipart/form-data">
                 <table>
 
                     <tbody>
                         <tr>
-                            <td>
+                        <td>
                                 <label for="imagen">Imagen (250x250 px):</label>
-                                <input class="modifProducto" type="file" id="imagen" name="imagen" value=""/>
+                                <input class="modifProducto" type="file" id="imagen" name="imagen" value="" />
                             </td>
                             <td>
                                 <label for="nombre_producto">Nombre Producto:</label>
-                                <input class="modifProducto" type="text" id="nombre_producto" name="nombre_producto" value="<?= $objProd['nombre_producto']; ?>" />
+                                <input class="modifProducto" type="text" id="nombre_producto" name="nombre_producto" value="" />
                             </td>
 
                             <br>
@@ -61,8 +59,8 @@
                         </tr>
                         <tr>
                             <td>
-                                <label>Tamaño:</label>
-                                <select name="tam">
+                            <label>Tamaño:</label>
+                            <select name="tam">
                                     <option value="S">S</option>
                                     <option value="M">M</option>
                                     <option value="XL">XL</option>
@@ -72,13 +70,13 @@
 
                             <td>
                                 <label for="descripcion">Descripcion:</label>
-                                <input class="modifProducto" type="text" id="descripcion" name="descripcion" value="<?= $objProd['descripcion_producto']; ?>" />
+                                <input class="modifProducto" type="text" id="descripcion" name="descripcion" value="" />
                             </td>
-
+                        
                         <tr>
                             <td>
                                 <label>Categoria:</label>
-                                <select name="cat">
+                                <select name="cat">Categoria:
                                     <option value="1">Patatas</option>
                                     <option value="2">Bocatas</option>
                                     <option value="3">Bebidas</option>
@@ -88,7 +86,7 @@
                             <br>
                             <td>
                                 <label for="precio">Precio:</label>
-                                <input class="modifProducto" type="text" id="precio" name="precio" value="<?= $objProd['precio_producto']; ?>" />
+                                <input class="modifProducto" type="text" id="precio" name="precio" value="" />
                             </td>
                         </tr>
                         <br>
