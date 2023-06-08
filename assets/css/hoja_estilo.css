@@ -260,7 +260,7 @@ h2 {
   float: right;
   width: 32px;
   height: 32px;
-  background-image: url("../iconos/svg/verificar.svg");
+  background-image: url("../iconos/verificar.png");
   background-size: 100%;
   background-repeat: no-repeat;
   background-color: #49111C;
@@ -1151,7 +1151,7 @@ th {
       float: right;
       width: 32px;
       height: 32px;
-      background-image: url("../iconos/svg/verificar.svg");
+      background-image: url("../iconos/verificar.png");
       background-size: 100%;
       background-repeat: no-repeat;
       background-color: #49111C;
