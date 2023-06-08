@@ -13,14 +13,14 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-4"></div>
-        <div class="col-lg-4 col-8" id="titulo">
+        <div class="col-lg-4 col-12" id="titulo">
           <h2>
             <a href=<?= base_url(''); ?>>
               BOCATAPAS
             </a>
           </h2>
         </div>
-        <div class="offset-lg-1 col-lg-1 col-1 ">
+        <div class="offset-lg-1 col-lg-1 col-1">
           <a href=<?= base_url('?c=carrito'); ?>>
             <div id="carro">
               <?= count($_SESSION['Sel']) ?>
@@ -62,6 +62,7 @@
             </div>
           </div>
         <?php } ?>
+        
       </div>
       <div class="col-lg-1 col-2">
         <nav class="navbar navbar-dark bg-dark d-sm-none">
@@ -96,7 +97,7 @@
             NOVEDADES
           </div>
 
-          <div class="col-lg-2 col-2 abarra">
+          <div class="col-xl-2 col-lg-1 col-2 abarra">
             CONTACTO
           </div>
         </div>
@@ -114,6 +115,8 @@
       <a href="#">CONTACTO</a>
       <hr>
       <a href="#">OFERTAS</a>
+      <hr>
+      <a href=<?= base_url('?c=Carrito'); ?>>CARRITO</a>
       <hr>
       <a href=<?= base_url('?c=carta'); ?>>CARTA</a>
       <hr>

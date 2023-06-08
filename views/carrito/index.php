@@ -20,7 +20,7 @@
     <div class="container bg-color1">
 
       <div class="container">
-        <div class="d-flex justify-content-around">
+        <div class="d-flex justify-content-around ">
 
           <div></div>
           <div></div>
@@ -31,7 +31,7 @@
           <div></div>
           <div></div>
 
-          <a href=<?= base_url('?c=Pedidos') ?>><button class="mPedidos boton mt-4">Mis Pedidos</button></a>
+          <a href=<?= base_url('?c=Pedidos') ?>><button class="mPedidos boton mt-4 hd ">Mis Pedidos</button></a>
         </div>
 
         <div class="NoCompra d-lg-flex justify-content-center align-items-center">
@@ -54,7 +54,7 @@
         <div></div>
 
 
-        <a href=<?= base_url('?c=Pedidos') ?>><button class="mPedidos boton mt-4">Mis Pedidos</button><a>
+        <a href=<?= base_url('?c=Pedidos') ?>><button class="mPedidos boton mt-4 hd ">Mis Pedidos</button><a>
       </div>
       <div class="container NoCompra">
 
@@ -71,7 +71,7 @@
             if ($pos == 0) {
           ?>
 
-              <div class="row justify-content-center">
+              <div class="row nom-mob">
                 <div class="col-sm-3 col-12">
                   <b> <?= $prods->getNProducto(); ?> </b>
                 </div>
@@ -89,58 +89,59 @@
 
             <?php } else {
             ?>
-              <div class="row">
-                <div class="col-lg-3 col-sm-12">
+              <div class="row nom-mob">
+                <div class="col-lg-3 col-12 ">
                   <b><?= $prods->getNProducto(); ?> </b>
                 </div>
               </div>
             <?php } ?>
-            <div class="row justify-content-center">
-              <div class="col-lg-3 col-sm-12">
+            <div class="row justify-content-center tab-mob">
+              <div class="col-lg-3 col-8">
                 <img src="../assets/images/webp/<?= $prods->getIdProd() ?>.webp" alt="<?= $prods->getNProducto() ?>" width="125px" height="125px">
               </div>
-              <div class="col-lg-3 mt-5 col-sm-12">
-                <button type="button" class="boton">Modificar Pedido</button>
+              <div class="col-lg-3 mt-5 col-6 hd">
+                <button type="button" class="boton ">Modificar Pedido</button>
               </div>
-              <div class="col-lg-3 mt-5 col-sm-12">
+              <div class="col-lg-3 mt-5 col-12 add-mob">
                 <form action=<?= base_url('config/añadirProducto.php') ?> method="post">
                   <input type="hidden" name="idprod" value=<?= $prods->getIdProd() ?>>
                   <input type="hidden" name="pos" value=<?= $pos ?>>
                   <div class="botonP">
-                    <button type="submit" class="boton" name="Del">-</button>
-                    <?= $pedido->getCantidad(); ?>
-                    <button type="submit" class="boton" name="Add">+</button>
+                      <button id="minus" type="submit" class="boton" name="Del">-</button>
+                    
+                      <?= $pedido->getCantidad(); ?>
+
+                      <button id="plus" type="submit" class="boton" name="Add">+</button>
                   </div>
                 </form>
 
               </div>
-              <div class="col-lg-3 mt-5 col-sm-12">
+              <div class="col-lg-3 mt-5 col-12 ">
                 <b><?= $pedido->calculaPrecio(); ?>€</b>
               </div>
             </div>
-            <hr id="bar" style="border: 2px;">
           <?php
             $pos++;
             $ptot += $pedido->calculaPrecio();
             $_SESSION['totPed'] = $ptot;
           }
           ?>
-          <div class="row justify-content-center">
+          <div class="row justify-content-center tot-mob">
             <div class="col-lg-6">
             </div>
-            <div class="col-lg-3 col-sm-6">
+            <div class="col-lg-3 col-3 ">
               <h4>TOTAL:</h4>
             </div>
-            <div class="col-lg-3 col-sm-6">
+            <div class="col-lg-3 col-6 pre-mob">
               <h5><b><?= $ptot ?>€</b></h5>
             </div>
           </div>
           <div class="row">
             <div class="col-lg-8">
             </div>
-            <div class="col-lg-2 col-sm-12">
+            <div class="col-lg-2 col-8 compra-mob">
               <form action=<?= base_url('config/realizarCompra.php') ?> method="post">
-                <button class="boton mt-3 compra" type="Submit" name="comp" style="float: right;">Comprar</button>
+                <button class="boton boton-mob mt-3 compra" type="Submit" name="comp">Comprar</button>
               </form>
             </div>
           </div>

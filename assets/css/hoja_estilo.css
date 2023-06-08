@@ -159,6 +159,7 @@ ul {
   transition: 0.5s;
   margin-left: 1rem;
 }
+
 .abarra:hover a {
   color: #49111C;
 }
@@ -202,7 +203,7 @@ h2 {
 }
 
 #t {
-  background-image: url(../iconos/svg/t_light_16.svg);
+  background-image: url(../iconos/t_light_16.png);
 }
 
 #i:hover {
@@ -211,7 +212,7 @@ h2 {
 }
 
 #f:hover {
-  background-image: url(../iconos/f_full_16.png);
+  background-image: url(../iconos/svg/f_full_16.svg);
   transition: 0.5s;
 }
 
@@ -313,6 +314,10 @@ h2 {
   margin-left: 10%;
 }
 
+.compra-mob {
+  float: right;
+}
+
 /*ICONOS*/
 #carro {
   background-image: url("../iconos/svg/s_white_light_32.svg");
@@ -331,7 +336,8 @@ h2 {
   transition: 0.5s;
 
 }
-.user{
+
+.user {
   margin-left: 6rem;
 }
 
@@ -445,36 +451,6 @@ th {
   display: block;
 }
 
-/*Tablet*/
-@media (max-width: 1399px) {
-
-  .imgCarta {
-    width: 9.375rem;
-    height: 9.375rem;
-
-  }
-
-  .prodsCarta {
-    width: 15vw;
-    margin-left: 2%;
-    text-align: center;
-  }
-
-  .sub {
-    font-size: 0.9rem;
-  }
-
-  .prodsCarta {
-    width: 9.375rem;
-    font-size: 0.75rem;
-  }
-
-  .subPr {
-    width: 200px;
-  }
-}
-
-
 /*MOBIL*/
 @media (max-width: 576px) {
 
@@ -565,7 +541,8 @@ th {
   .rs {
     width: 16px;
     height: 16px;
-    margin: 5%;
+    margin: 5rem;
+    margin-bottom: 10rem;
   }
 
   #copy {
@@ -602,17 +579,6 @@ th {
     width: 15.625rem;
     margin-left: 2%;
     text-align: center;
-  }
-
-  .botonCarta {
-    float: right;
-    width: 32px;
-    height: 32px;
-    background-image: url("../iconos/svg/verificar.svg");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-color: #49111C;
-    border: none;
   }
 
   .subPr {
@@ -765,5 +731,467 @@ th {
     transition: background-color 0.2s ease-in-out;
   }
 
+  .graella {
+    font-size: 0.5rem;
+  }
 
+  html {
+    overflow-x: hidden;
+  }
+
+  a {
+    text-decoration: none;
+    color: #F2F4F3;
+  }
+
+  a:hover {
+    color: #F2F4F3;
+  }
+
+  .bg-color1 {
+    background-color: var(--color1);
+  }
+
+
+  #img1-index {
+    background-image: url(../images/cabecera.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+
+  .caja-index {
+    height: 35vh;
+    font-size: 1.2rem;
+  }
+
+  .centro {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+
+  .sub {
+    color: #49111C;
+    margin-top: 5%;
+  }
+
+  .izq {
+    margin-left: 5%;
+  }
+
+  .der {
+    margin-right: 5%;
+  }
+
+  /* Classes modificades sobre bootstrap */
+
+
+  header {
+    color: #F2F4F3;
+    background-color: #0A0908;
+  }
+
+  footer {
+    color: #F2F4F3;
+    background-color: #0A0908;
+    font-family: "LatoR";
+    font-size: 0.8rem;
+  }
+
+  body {
+    font-family: "LatoR";
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  .barra {
+    color: #F2F4F3;
+    background-color: #0A0908;
+  }
+
+  .abarra {
+    color: #F2F4F3;
+    font-size: 0.8rem;
+    padding: 2px;
+    text-align: center;
+  }
+
+  .abarra:hover {
+    cursor: pointer;
+    color: #49111C;
+    background-color: #FDE1C8;
+    padding: 2px;
+    text-align: center;
+    transition: 0.5s;
+  }
+
+
+  .navbar {
+    height: 6vh;
+  }
+
+  h2 {
+    font-family: "Bellfort";
+  }
+
+  .futer {
+    padding-top: 1.5%;
+  }
+
+  .rs {
+    width: 16px;
+    height: 16px;
+    margin: 5%;
+  }
+
+  .rs:hover {
+    cursor: pointer;
+    transition: 0.5s;
+  }
+
+  #copy {
+    padding-left: 12%;
+  }
+
+
+  #i {
+    background-image: url(../iconos/i_light_16.png);
+  }
+
+  #f {
+    background-image: url(../iconos/f_light_16.png);
+  }
+
+  #t {
+    background-image: url(../iconos/t_light_16.png);
+  }
+
+  #i:hover {
+    background-image: url(../iconos/i_full_16.png);
+    transition: 0.5s;
+  }
+
+  #f:hover {
+    background-image: url(../iconos/f_full_16.png);
+    transition: 0.5s;
+  }
+
+  #t:hover {
+    background-image: url(../iconos/t_full_16.png);
+    transition: 0.5s;
+  }
+
+  /*IMAGENES CARTA*/
+  .imgCarta {
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 15.625rem;
+    height: 15.625rem;
+  }
+
+  .imgCarta div p {
+    visibility: hidden;
+    text-align: center;
+  }
+
+  .imgCarta:hover {
+    color: #FDE1C8;
+  }
+
+  .imgCarta:hover div {
+    transition: 0.5s;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0, 0.6);
+  }
+
+  .imgCarta:hover p {
+    visibility: visible;
+    padding: 5%;
+  }
+
+  .prodsCarta {
+    width: 15.625rem;
+    margin-left: 2%;
+    text-align: center;
+  }
+
+  .botonCarta {
+    float: right;
+    width: 32px;
+    height: 32px;
+    background-image: url("../iconos/verificar.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: #49111C;
+    border: none;
+  }
+
+  .subPr {
+    width: 250px;
+    height: 38px;
+    color: #FDE1C8;
+    background-color: #49111C;
+  }
+
+  #size {
+    background-color: #49111C;
+    border: none;
+    cursor: pointer;
+    color: #FDE1C8;
+    float: right;
+  }
+
+  /*CARRITO*/
+  .boton {
+    background-color: #49111C;
+    color: #FDE1C8;
+    border: none;
+    border-radius: 3px;
+  }
+
+  .NoCompra {
+    min-height: 100vh;
+  }
+
+  .botonP {
+    background-color: #49111C;
+    border-radius: 3px;
+    color: #FDE1C8;
+    text-align: center;
+    width: auto;
+    margin-right: 55%;
+  }
+
+  .mPedidos {
+    margin-right: 5%;
+    min-height: 5vh;
+    min-width: 10vw;
+  }
+
+  .tCarrito {
+    margin-right: 10%;
+    margin-left: 10%;
+  }
+
+  /*ICONOS*/
+  .bg-dark {
+    background-color: #0A0908 !important;
+  }
+
+  #carro {
+    display: none;
+  }
+
+  .user {
+    display: none;
+  }
+
+  th {
+    color: #49111C;
+  }
+
+  .compra {
+    min-width: 10vw;
+    text-align: center;
+  }
+
+  .Pi {
+    font-size: 0.9rem;
+  }
+
+  #copy {
+    font-size: 0.7rem;
+    padding-left: 0%;
+    text-align: center;
+  }
+
+  .tt-pp {
+    font-size: 1.8rem;
+  }
+
+  .pp-pp {
+    font-size: 1rem;
+  }
+
+  .carousel {
+    display: none;
+  }
+
+  .carousel-caption h2 {
+    display: none;
+  }
+
+  .carousel-caption p {
+    display: none;
+  }
+
+  .carousel-caption div {
+    display: none;
+  }
+
+  .textoInd {
+    font-size: 1rem;
+  }
+
+  #bar {
+    display: none;
+  }
+
+
+  .formReg {
+    margin: auto;
+    margin-top: 100px;
+    max-width: 500px;
+    background-color: #F2F4F3;
+    padding: 20px;
+    border-radius: 10px;
+    color: #49111C;
+  }
+
+  .lReg {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .iReg {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FDE1C8;
+  }
+
+  .bReg {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #49111C;
+    color: #F2F4F3;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  .bReg:hover {
+    background-color: #722040;
+  }
+
+  .hd {
+    display: none;
+  }
+
+  .compra-mob {
+    float: none;
+    text-align: center;
+    padding: 0px;
+  }
+
+  .boton-mob {
+    width: 100%;
+  }
+
+  .tot-mob {
+    margin-top: 2rem;
+  }
+
+  .tab-mob {
+    border: 2px solid #0A0908;
+    border-top: none;
+    margin-bottom: 2rem;
+    max-width: 250px !important;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    text-align: center;
+  }
+
+  .nom-mob {
+    border: 2px solid #0A0908;
+    border-bottom: none;
+    max-width: 250px !important;
+    text-align: center;
+  }
+
+  .pre-mob {
+    text-align: left;
+    padding-right: 2rem;
+  }
+
+  .botonP {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #49111C;
+    color: #FDE1C8;
+  }
+
+  #minus {
+    padding-right: 5rem;
+  }
+
+  #plus {
+    padding-left: 5rem;
+  }
 }
+
+  /*Tablet*/
+  @media (max-width: 1399px) {
+
+    .imgCarta {
+      width: 200px;
+      height: 200px;
+
+    }
+    .botonCarta {
+      float: right;
+      width: 32px;
+      height: 32px;
+      background-image: url("../iconos/svg/verificar.svg");
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-color: #49111C;
+      border: none;
+    }
+
+    .prodsCarta {
+      width: 200px !important;
+      margin-left: 2%;
+      text-align: center;
+    }
+
+    .sub {
+      font-size: 0.9rem;
+    }
+
+    .prodsCarta {
+      width: 9.375rem;
+      font-size: 0.75rem;
+    }
+
+    .subPr {
+      width: 200px;
+    }
+
+    .user {
+      margin-left: 1rem;
+    }
+
+    #carro {
+      margin-left: 1rem;
+    }
+
+    .abarra {
+      margin-left: 0.5rem;
+    }
+
+    .abarra:hover {
+      margin-left: 0.1rem;
+    }
+
+
+  }

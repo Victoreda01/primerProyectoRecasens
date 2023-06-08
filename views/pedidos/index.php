@@ -40,6 +40,8 @@
           margin-top: 5rem;
           border: 2px solid #0A0908;
           margin-bottom: 3rem;
+          width: 100%;
+          font-size: 1rem;
         }
 
         th,
