@@ -33,4 +33,4 @@ if (isset($_POST['comp'])) {
 
 
 $_SESSION['Sel'] = array();
-header("Location: http://www.primerproyectorecasens.com/");
+header("Location: http://www.primerproyectorecasens.com/?c=Pedidos");

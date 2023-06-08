@@ -16,13 +16,13 @@
 					</div>
 				</div>
 				<div class="col-lg-6 col-sm-12 mb-4">
-					<img src="assets/images/img1-index.png" width="100%">
+					<img src="assets/images/webp/img1-index.webp" width="100%" alt="Se una bandeja de jamon serrano recien cortado a mano">
 				</div>
 			</div>
 
 			<div class="row mt-5 mb-4">
 				<div class="col-lg-6 col-sm-12 mb-4">
-					<img src="assets/images/img2-index.png" width="100%">
+					<img src="assets/images/webp/img2-index.webp" width="100%" alt="Se ven unas croquetas en su punto doradito más bueno">
 				</div>
 				<div class="col-lg-6 col-sm-12 mb-4">
 					<h5 class="sub" style="text-align: right;">NUEVA E-TAPA</h5>
@@ -37,24 +37,19 @@
 			</div>
 
 			<div class="row mt-5 mb-4">
-				<div class="col-lg-6 col-sm-12 mb-4">
-					<h5 class="sub text-left">TAPAS A DOMICILIO</h5>
+				<div class="col-lg-12 col-sm-12 mb-4">
+					<h5 class="sub text-left">VIDEO BOCATAPAS</h5>
 					<div class="text-left textoInd">
 						<br>
-						Ya repartimos tapas a domicilio!<br>
-						Si quiere alguna tapa en concreto de nuestro catàlogo no dude en llamarnos al :<br><br>
-						995 664 324<br><br>
-						Estaremos encantados de que haga su pedido<br>
-						Esperamos su llamada!!!
+						<video src="/assets/Bocatapas.mp4" controls width="100%" alt="Video Explicativo del Restaurante">
+							Tu navegador no soporta el elemento de video.
+						</video>
 					</div>
-				</div>
-				<div class="col-lg-6 col-sm-12 mb-4">
-					<img src="assets/images/img3-index.png" width="100%">
 				</div>
 			</div>
 			<div class="row mt-5 pb-5">
 				<div class="col-lg-6 col-sm-12 mb-4">
-					<img src="assets/images/img4-index.png" width="100%">
+					<img src="assets/images/webp/img4-index.webp" width="100%" alt="Mapa que señala el Bernat el Ferrer">
 				</div>
 				<div class="col-lg-6 col-sm-12 mb-4">
 					<h5 class=" sub" style="text-align: right; ">LOCALICENOS</h5>

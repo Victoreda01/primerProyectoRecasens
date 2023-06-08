@@ -23,7 +23,8 @@ class pedidoDAO{
         inner join pedido_producto pp on pp.id_pedido = ped.id_pedido 
         inner join producto prod on prod.id_producto = pp.id_producto
         WHERE ped.id_user = $id
-        group by ped.id_pedido;");
+        group by ped.id_pedido
+        order by ped.id_pedido DESC;");
         $stmt->execute();
         $result = $stmt->get_result();
         $listaPeds = array();

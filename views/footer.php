@@ -15,6 +15,7 @@
             </ul>
         </div>
         <div class="col-12 col-lg-3 mt-3" id="copy" style="padding-left:12%;">
+        <img src="../assets/iconos/svg/LOGO_BOCATAPAS_color.png.svg" alt="logo Bocatapas">
             © Copyright 2023
         </div>
         <div class="col-lg-2"></div>

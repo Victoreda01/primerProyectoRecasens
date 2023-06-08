@@ -78,8 +78,11 @@
                                 } ?>
                         <tr>
                             <td>
-                                <label for="role">Rol:</label>
-                                <input class="modifUser" type="text" name="rol" value="<?= $objUser->rol ?>" readonly />
+                            <label>Rol:</label>
+                            <select name="rol" disabled>
+                                    <option value="usuario">Usuario</option>
+                                    <option value="admin">Administrador</option>
+                                </select>
                             </td>
                             <br>
                             <td>

@@ -37,9 +37,13 @@
                 }
             </style>
             <?php
-
             $usDAO = new userDAO();
-            $objUser = $usDAO->getUserById($_POST['id_usuario']);
+            if (isset($_POST['id_usuario'])) {
+                $objUser = $usDAO->getUserById($_POST['id_usuario']);
+            } else {
+                $objUser = $usDAO->getUserById($_SESSION['id_user'][0]);
+            }
+
             ?>
 
             <form action="/config/modificar_user.php" method="post">
@@ -78,8 +82,11 @@
                         } ?>
                         <tr>
                             <td>
-                                <label for="role">Rol:</label>
-                                <input class="modifUser" type="text" name="rol" value="<?= $objUser->rol ?>" />
+                            <label>Rol:</label>
+                            <select name="rol">
+                                    <option value="usuario">Usuario</option>
+                                    <option value="admin">Administrador</option>
+                                </select>
                             </td>
                             <br>
                             <td>
